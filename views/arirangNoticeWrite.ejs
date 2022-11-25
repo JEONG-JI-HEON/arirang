@@ -1,0 +1,55 @@
+<div class="sub_header">
+  <div class="inner_subHeader w1440">
+    <div class="home_btn"><a href="/"></a></div>
+    <ul class="sub_nav">
+      <li id="sub_menu">
+        <div class="sub_bg"></div>
+        <a href="">고객센터</a>
+        <ul class="sub_lnb">
+          <li><a href="/movieHome">영화</a></li>
+          <li><a href="">예매</a></li>
+          <li><a href="">이벤트</a></li>
+          <li><a href="">프로그램</a></li>
+          <li><a href="/noticeUser">고객센터</a></li>
+        </ul>
+      </li>
+      <li id="sub_menu">
+        <div class="sub_bg"></div>
+        <a href="">공지사항</a>
+        <ul class="sub_lnb">
+          <li><a href="/noticeUser">공지사항</a></li>
+          <li><a href="">자주찾는 질문</a></li>
+          <li><a href="">1:1 문의</a></li>
+          <li><a href="">찾아오시는 길</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<section class="sub_sec">
+  <h2>공지사항</h2>
+  <div class="boardList_wrap w1440">
+    <form id="noticeWrite" method="post" action="/noticeWriteInfo">
+      <div class="boardTitle">
+        <label for="">제목</label>
+        <input type="text" name="title">
+      </div>
+      <div class="boardCon">
+        <div class="boardTopCon">
+          <input type="checkbox" name="noticeCheck" id="noticeCheck"><label class="wirteNotice" for="noticeCheck">공지로 작성</label>
+          <label for="">ID</label>
+          <input type="text" name="id">
+          <label for="">PW</label>
+          <input type="password" name="password">
+        </div>
+        <div class="boardBottomCon">
+          <textarea name="boardCon" id="" cols="30" rows="20"></textarea>
+        </div>
+      </div>
+      <div class="boardBtn">
+        <input type="submit" value="등록">
+        <input type="submit" value="취소">
+      </div>
+    </form>
+  </div>
+</section>
