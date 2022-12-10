@@ -1,5 +1,5 @@
 {
-  "name": "서문시장야시장",
+  "name": "아리랑시네센터",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -14,6 +14,8 @@
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "express-ejs-layouts": "^2.5.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
     "static": "^2.0.0"
   }
 }

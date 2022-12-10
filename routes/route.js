@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router(); /* R은 대문자로 */
+const multer = require('multer');
+const fs = require('fs');
 const path = require('path');
-const { title } = require('process');
+const db = require('./../db.js');
 
 
 
