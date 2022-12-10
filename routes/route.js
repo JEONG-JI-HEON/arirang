@@ -27,9 +27,16 @@ router.get('/login', (req, res)=>{
   res.render('arirangLogin')
 });
 
-router.get('/noticeUser', (req, res)=>{
-  res.render('arirangNoticeUser')
+// 게시판
+router.get('/noticeUser', (req, res) => {
+  db.getNotice((rows) => {
+    res.render('arirangNoticeUser', {
+      rows: rows
+    });
+  });
 });
+
+
 
 router.get('/noticeRead', (req, res)=>{
   res.render('arirangNoticeRead')
