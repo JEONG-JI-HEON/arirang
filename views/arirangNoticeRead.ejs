@@ -30,38 +30,19 @@
   <h2>공지사항</h2>
   <div class="boardList_wrap w1440">
     <div class="board_read_title">
-      <h3>전산시스템 작업에 따른 홈페이지 서비스 중지 안내[11월 24일 목요일 오후 21시 ~ 23시]</h3>
+      <h3><%= row.not_tit %></h3>
       <div class="writer_info">
-        <span class="writer_name">통합 관리자</span>
-        <span class="write_time">2022-11-16</span>
-        <span class="view_num"><em>조회수 : </em>6</span>
+        <span class="writer_name"><%= row.write_user %></span>
+        <span class="write_time">
+          <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
+          <%= toYear %>-<%= toMonth %>-<%= toDate %>
+        </span>
+        <span class="view_num"><em>조회수 : </em><%= row.view_cnt %></span>
       </div>
     </div>
     <div class="board_read_con">
       <p>
-        안녕하세요.
-        <br>
-        성북문화재단 입니다.
-        <br>
-        <br>
-        더 나은 시스템 환경 제공을 위해 홈페이지 서버 업데이트를 실시합니다.
-        <br>
-        홈페이지 서버 점검시간 동안 홈페이지 및 상호대차/무인예약 등 서비스 이용이 중지되오니 양해 바랍니다. 이용에 불편을 끼쳐 죄송합니다.
-        <br>
-        - 점 검 일 시 : 2022.11.24(목) 21:00 ~ 23:00 까지.
-        <br>
-        - 대상서비스 :
-        <br>
-        -> 성북문화재단, 성북구립도서관 및 개별도서관, 아리랑시네센터, 성북구립미술관 및 개별미술관 홈페이지
-        <br>
-        -> U-도서관 어플, 상호대차신청/무인예약신청 등 성북구립도서관의 모든 서비스 이용 불가
-        <br>
-        - 주 요 내 용 : 홈페이지 운영서버 업데이트
-        <br>
-        ※ 조기에 완료될 경우 일정 전에 사용 가능.
-        <br>
-        <br>
-        감사합니다.
+        <%= row.not_content %>
       </p>
     </div>
   </div>

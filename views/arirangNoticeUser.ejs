@@ -48,6 +48,8 @@
           <td>작성자</td>
           <td>작성일자</td>
           <td>조회수</td>
+          <td>수정</td>
+          <td>삭제</td>
         </tr>
       </thead>
       <tbody>
@@ -57,7 +59,7 @@
           </td>
           <td class="subject">
             <p class="stitle">
-              <a href="/noticeRead">
+              <a href="">
                 전산시스템 작업에 따른 홈페이지 서비스 중지 안내[11월 24일 목요일 오후 21시 ~ 23시]
               </a>
             </p>
@@ -72,7 +74,7 @@
           </td>
           <td class="subject">
             <p class="stitle">
-              <a href="/noticeRead">
+              <a href="">
                 [행사]2022년 SAC on Screen 11월 프로그램 신청 안내 / 11.17.(목) 연극 &lt;인형의 집&gt;
               </a>
             </p>
@@ -87,7 +89,7 @@
           </td>
           <td class="subject">
             <p class="stitle">
-              <a href="/noticeRead">
+              <a href="">
                 [이벤트] &lt;낮에는 덥고 밤에는 춥고&gt; 개봉 이벤트 안내
               </a>
             </p>
@@ -104,7 +106,7 @@
           </td>
           <td class="subject">
             <p class="stitle">
-              <a href="/noticeRead">
+              <a href="/noticeRead?id=<%= row.id %>">
                 <%= row.not_tit %>
               </a>
             </p>
@@ -118,6 +120,8 @@
           <td class="cnt">
             <%= row.view_cnt %>
           </td>
+          <td><input type="button" value="수정하기" onclick="javascript:location.href='/noticeUpdate?id=<%= row.id %>'"></td>
+          <td><input type="button" value="삭제하기" onclick="javascript:location.href='/noticeDelete?id=<%= row.id %>'"></td>
         </tr>
         <% }); %>
       </tbody>

@@ -29,21 +29,24 @@
 <section class="sub_sec">
   <h2>공지사항</h2>
   <div class="boardList_wrap w1440">
-    <form id="noticeWrite" method="post" action="/noticeWriteInfo">
+    <form id="noticeWrite" method="post" action="/noticeUpdateInfo">
+      <input type="hidden" name="id" value="<%= row.id %>">
       <div class="boardTitle">
         <label for="">제목</label>
-        <input type="text" name="not_tit">
+        <input type="text" name="not_tit" value="<%= row.not_tit %>">
       </div>
       <div class="boardCon">
         <div class="boardTopCon">
           <input type="checkbox" name="noticeCheck" id="noticeCheck"><label class="wirteNotice" for="noticeCheck">공지로 작성</label>
           <label for="">ID</label>
-          <input type="text" name="write_user">
+          <input type="text" name="write_user" value="<%= row.write_user %>">
           <label for="">PW</label>
           <input type="password" name="user_pw">
         </div>
         <div class="boardBottomCon">
-          <textarea name="not_content" id="" cols="30" rows="20"></textarea>
+          <textarea name="not_content" id="" cols="30" rows="20">
+            <%= row.not_content %>
+          </textarea>
         </div>
       </div>
       <div class="boardBtn">

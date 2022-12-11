@@ -7,27 +7,33 @@ const db = require('./../db.js');
 
 
 
-router.get('/', (req, res)=>{ /* 메인페이지 */
+/* 메인페이지 */
+router.get('/', (req, res) => {
   res.render('arirang')
 });
 
-router.get('/movieHome', (req, res)=>{
+/* 영화홈페이지 */
+router.get('/movieHome', (req, res) => {
   res.render('arirangMovieHome')
 });
 
-router.get('/join1', (req, res)=>{
+/* 회원가입1페이지 */
+router.get('/join1', (req, res) => {
   res.render('arirangJoin1')
 });
 
-router.get('/join2', (req, res)=>{
+/* 회원가입2페이지 */
+router.get('/join2', (req, res) => {
   res.render('arirangJoin2')
 });
 
-router.get('/login', (req, res)=>{
+/* 로그인페이지 */
+router.get('/login', (req, res) => {
   res.render('arirangLogin')
 });
 
-// 게시판
+
+/* 게시판메인페이지 */
 router.get('/noticeUser', (req, res) => {
   db.getNotice((rows) => {
     res.render('arirangNoticeUser', {
@@ -36,57 +42,97 @@ router.get('/noticeUser', (req, res) => {
   });
 });
 
-
-
-router.get('/noticeRead', (req, res)=>{
-  res.render('arirangNoticeRead')
-});
-
-router.get('/noticeWrite', (req, res)=>{
+/* 게시판작성페이지 */
+router.get('/noticeWrite', (req, res) => {
   res.render('arirangNoticeWrite')
 });
 
 
-router.post('/joininfo', (req,res)=>{
+/* 게시판작성내용을 테이블에 넣기 */
+router.post('/noticeWriteInfo', (req, res) => {
   let param = JSON.parse(JSON.stringify(req.body));
+  let write_user = param['write_user'];
+  // let user_pw = param['user_pw'];
+  let not_tit = param['not_tit'];
+  let not_content = param['not_content'];
+
+  db.insertNotice(write_user, not_tit, not_content, () => {
+    res.redirect('/noticeUser'); /* 게시판페이지 */
+  });
+});
+
+
+/* 게시판수정페이지 */
+router.get('/noticeUpdate', (req, res) => {
+  let id = req.query.id;
+  db.getNoitceByid(id, (row) => {
+    res.render('arirangNoticeUpdate', {
+      row: row[0]
+    })
+  });
+});
+
+/* 게시판수정내용을 테이블에 넣기 */
+router.post('/noticeUpdateInfo', (req, res) => {
+  let param = JSON.parse(JSON.stringify(req.body));
+  let write_user = param['write_user'];
+  // let user_pw = param['user_pw'];
+  let not_tit = param['not_tit'];
+  let not_content = param['not_content'];
+
+  db.updateNotice(write_user, not_tit, not_content, () => {
+    res.redirect('/noticeUser'); /* 게시판페이지 */
+  });
+});
+
+/* 게시판 삭제할때 */
+router.get('/noticeDelete', (req, res) => {
+  let id = req.query.id;
+  db.deleteNoticeByid(id, () => {
+    res.redirect('/noticeUser'); /* 게시판페이지 */
+  });
+});
+
+
+/* 게시판의 상세페이지 */
+router.get('/noticeRead', (req, res) => {
+  let id = req.query.id;
+  db.getNoitceByid(id, (row) => {
+    res.render('arirangNoticeRead', {
+      row: row[0]
+    })
+  });
+});
+
+
+
+
+/* 회원가입 내용을 테이블에 넣기 */
+router.post('/joininfo', (req, res) => {
+  let param = JSON.parse(JSON.stringify(req.body));
+  let user_name = param['user_name'];
   let user_id = param['user_id'];
   let user_pw = param['user_pw'];
-  let user_pwCheck = param['user_pwCheck'];
-  let user_name = param['user_name'];
+  // let user_pwCheck = param['user_pwCheck'];
   let user_birth = param['user_birth'];
   let user_phoneNum = param['user_phoneNum'];
-  console.log(`아이디 : ${user_id}`);
-  console.log(`비밀번호 : ${user_pw}`);
-  console.log(`비밀번호 확인 : ${user_pwCheck}`);
-  console.log(`이름 : ${user_name}`);
-  console.log(`생년월일 : ${user_birth}`);
-  console.log(`휴대전화 번호 : ${user_phoneNum}`);
-  
+  db.insertUserInfo(user_name, user_id, user_pw, user_birth, user_phoneNum, ()=>{
+    res.redirect('/login');
+  });
 })
 
-router.post('/logininfo', (req,res)=>{
+/* 로그인 내용 */
+router.post('/logininfo', (req, res) => {
   let param = JSON.parse(JSON.stringify(req.body));
   let login_id = param['login_id'];
   let login_pw = param['login_pw'];
-  console.log(`유저 아이디 : ${login_id}`)
-  console.log(`유저 비밀번호 : ${login_pw}`);
-  res.render('arirang.ejs');
-})
-
-router.post('/noticeWriteInfo', (req,res)=>{
-  let param = JSON.parse(JSON.stringify(req.body));
-  let title = param['title'];
-  let noticeCheck = param['noticeCheck'];
-  let id = param['id'];
-  let password = param['password'];
-  let boardCon = param['boardCon'];
-  console.log(`글 제목 : ${title}`);
-  console.log(`공지여부 : ${noticeCheck}`);
-  console.log(`글 작성자 : ${id}`);
-  console.log(`글 작성 비밀번호 : ${password}`);
-  console.log(`글 내용 : ${boardCon}`);
-
-  res.render('arirangNoticeNew.ejs', {'data': param});
+  db.loginCheck(login_id, login_pw, (results)=>{
+    if (results.length > 0){
+      res.send(`<script>alert("${login_id}님, 어서오세요."); document.location.href="/";</script>`)
+    } else {
+      res.send(`<script>alert("로그인 정보가 일치하지 않습니다."); document.location.href="/login";</script>`)
+    }
+  });
 })
 
 module.exports = router;
