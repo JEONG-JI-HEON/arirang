@@ -1,0 +1,126 @@
+<div class="sub_header">
+  <div class="inner_subHeader w1440">
+    <div class="home_btn"><a href="/"></a></div>
+    <ul class="sub_nav">
+      <li id="sub_menu">
+        <div class="sub_bg"></div>
+        <a href="">프로그램</a>
+        <ul class="sub_lnb">
+          <li><a href="/movieHome">영화</a></li>
+          <li><a href="">예매</a></li>
+          <li><a href="">이벤트</a></li>
+          <li><a href="">프로그램</a></li>
+          <li><a href="/noticeUser">고객센터</a></li>
+        </ul>
+      </li>
+      <li id="sub_menu">
+        <div class="sub_bg"></div>
+        <a href="">SOS</a>
+        <ul class="sub_lnb">
+          <li><a href="">정기상영</a></li>
+          <li><a href="">영화제</a></li>
+          <li><a href="">기획전</a></li>
+          <li><a href="/SOSUser">SOS</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<section class="sub_sec">
+  <h2 class="SOS_tit">
+    <p class="f_gray">S</p>AC <p class="f_gray">O</p>N <p class="f_gray">S</p>CREEN
+  </h2>
+  <div class="title_wrap w1440">
+    <form action="">
+      <select name="" id="notice_select">
+        <option value="">제목</option>
+        <option value="">내용</option>
+        <option value="">작성자</option>
+      </select>
+      <input id="notice_search" type="text" value="" placeholder="검색어를 입력하세요.">
+      <button id="search_btn" type="submit"></button>
+    </form>
+  </div>
+  <div class="boardList_wrap w1440">
+    <table class="boardList_table">
+      <thead>
+        <tr>
+          <td>번호</td>
+          <td>제목</td>
+          <td>작성자</td>
+          <td>작성일자</td>
+          <td>조회수</td>
+          <td>수정</td>
+          <td>삭제</td>
+        </tr>
+      </thead>
+      <tbody>
+        <% rows.forEach((row, index, array)=>{ %>
+        <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
+        <tr>
+          <td class="num">
+            <%= rows.length - index %>
+          </td>
+          <td class="subject">
+            <p class="stitle">
+              <a href="/SOSRead?id=<%= row.id %>">
+                <%= row.sos_tit %>
+              </a>
+            </p>
+          </td>
+          <td class="writer">
+            <%= row.write_user %>
+          </td>
+          <td class="date">
+            <%= toYear %>-<%= toMonth %>-<%= toDate %>
+          </td>
+          <td class="cnt">
+            <%= row.view_cnt %>
+          </td>
+          <td><input type="button" value="수정하기" onclick="javascript:location.href='/SOSUpdate?id=<%= row.id %>'"></td>
+          <td><input type="button" value="삭제하기" onclick="javascript:location.href='/SOSDelete?id=<%= row.id %>'"></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <div class="boardList_bot">
+      <div class="pageList">
+        <span class="first_page"></span>
+        <strong>
+          <span>1</span>
+        </strong>
+        <a href="">
+          <span>2</span>
+        </a>
+        <a href="">
+          <span>3</span>
+        </a>
+        <a href="">
+          <span>4</span>
+        </a>
+        <a href="">
+          <span>5</span>
+        </a>
+        <a href="">
+          <span>6</span>
+        </a>
+        <a href="">
+          <span>7</span>
+        </a>
+        <a href="">
+          <span>8</span>
+        </a>
+        <a href="">
+          <span>9</span>
+        </a>
+        <a href="">
+          <span>10</span>
+        </a>
+        <span class="last_page"></span>
+      </div>
+      <div class="write_btn">
+        <a href="/SOSWrite">작성하기</a>
+      </div>
+    </div>
+  </div>
+</section>

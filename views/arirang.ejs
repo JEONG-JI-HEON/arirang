@@ -209,48 +209,83 @@
     <!-- 전체 게시판 -->
     <div class="notice">
       <nav class="nt_tit">
-        <a href="" class="bold f_black">전체</a>
-        <a href="" class="f_black">공지사항</a>
-        <a href="" class="f_black">이벤트</a>
-        <a href="" class="f_black">행사</a>
+        <span class="f_black bold">전체</span>
+        <span class="f_black">공지사항</span>
+        <span class="f_black">이벤트</span>
+        <span class="f_black">행사</span>
       </nav>
       <div class="nt_con">
-        <ul>
+        <ul class="noticeAll on">
+          <% rows.forEach((row, index, array)=>{ %>
+          <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
           <li class="isNotice">
             <a href="/noticeRead">
-              <span class="date f_black">2022-10-14</span>
-              <span class="subject"><strong class="f_red">[이벤트]</strong>
-                &lt;거래완료&gt; 현장 이벤트 안내</span>
+              <span class="date f_black">
+                <%= toYear %>-<%= toMonth %>-<%= toDate %>
+              </span>
+              <span class="subject">
+                <% if (row.noticeCheck == 'on'){ %>
+                <strong class="f_red">[공지사항]</strong>
+                <% } else if (row.eventCheck == 'on'){ %>
+                <strong class="f_red">[이벤트]</strong>
+                <% } else if (row.festivalCheck == 'on'){ %>
+                <strong class="f_red">[행사]</strong>
+                <% } else { %>
+                <strong>[일반]</strong>
+                <% } %>
+                <%= row.not_tit %>
+              </span>
             </a>
           </li>
+          <% }); %>
+        </ul>
+        <ul class="noticeReal">
+          <% rows.forEach((row, index, array)=>{ %>
+          <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
+          <% if (row.noticeCheck == 'on'){ %>
           <li class="isNotice">
             <a href="/noticeRead">
-              <span class="date f_black">2022-10-09</span>
-              <span class="subject"><strong class="f_red">[행사]</strong>
-                2022년 SAC on Screen 10월 프로그램 신청 안내 / 10.18.(화) 무용 &lt;춤이 말하다&gt;</span>
+              <span class="date f_black"><%= toYear %>-<%= toMonth %>-<%= toDate %></span>
+              <span class="subject">
+                <strong class="f_red">[공지사항]</strong>
+                <%= row.not_tit %>
+              </span>
             </a>
           </li>
+          <% } %>
+          <% }); %>
+        </ul>
+        <ul class="noticeEvent">
+          <% rows.forEach((row, index, array)=>{ %>
+          <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
+          <% if (row.eventCheck == 'on'){ %>
           <li class="isNotice">
             <a href="/noticeRead">
-              <span class="date f_black">2022-10-07</span>
-              <span class="subject"><strong class="f_red">[이벤트]</strong>
-                &lt;고고다이노 극장판: 얼음공룡의 비밀&gt; 개봉 이벤트 안내</span>
+              <span class="date f_black"><%= toYear %>-<%= toMonth %>-<%= toDate %></span>
+              <span class="subject">
+                <strong class="f_red">[이벤트]</strong>
+                <%= row.not_tit %>
+              </span>
             </a>
           </li>
+          <% } %>
+          <% }); %>
+        </ul>
+        <ul class="noticeFetival">
+          <% rows.forEach((row, index, array)=>{ %>
+          <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
+          <% if (row.festivalCheck == 'on'){ %>
           <li class="isNotice">
             <a href="/noticeRead">
-              <span class="date f_black">2022-10-07</span>
-              <span class="subject"><strong class="f_red">[이벤트]</strong>
-                &lt;선데이 리그&gt; 개봉이벤트 안내</span>
+              <span class="date f_black"><%= toYear %>-<%= toMonth %>-<%= toDate %></span>
+              <span class="subject">
+                <strong class="f_red">[행사]</strong>
+                <%= row.not_tit %>
+              </span>
             </a>
           </li>
-          <li class="isNotice">
-            <a href="/noticeRead">
-              <span class="date f_black">2022-10-07</span>
-              <span class="subject"><strong class="f_red">[이벤트]</strong>
-                &lt;애프터 미투&gt; 개봉이벤트 안내</span>
-            </a>
-          </li>
+          <% } %>
+          <% }); %>
         </ul>
       </div>
     </div>
@@ -272,7 +307,7 @@
         </div>
       </nav>
       <div class="mt_con">
-        <ul>
+        <ul class="moviePlace1 on">
           <li class="isMT">
             <a href="" class="f_black">
               <div class="mT_img">
@@ -309,11 +344,85 @@
             </a>
           </li>
         </ul>
+        <ul class="moviePlace2">
+          <li class="isMT">
+            <a href="" class="f_black">
+              <div class="mT_img">
+                <img src="img/movierun4.jpg" alt="">
+              </div>
+              <p class="mT_tit">신비아파트 극장판 차원도깨비와 7개의 세계</p>
+              <div class="mT_tim">
+                <span>14:20</span>
+              </div>
+            </a>
+          </li>
+          <li class="isMT">
+            <a href="" class="f_black">
+              <div class="mT_img">
+                <img src="img/movierun5.jpg" alt="">
+              </div>
+              <p class="mT_tit">아바타: 물의 길</p>
+              <div class="mT_tim">
+                <span>11:00</span>
+                <span>16:00</span>
+                <span>18:40</span>
+              </div>
+            </a>
+          </li>
+          <li class="isMT">
+            <a href="" class="f_black">
+              <div class="mT_img">
+                <img src="img/movierun6.jpg" alt="">
+              </div>
+              <p class="mT_tit">혜옥이</p>
+              <div class="mT_tim">
+                <span>09:35</span>
+                <span>16:50</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <ul class="moviePlace3">
+          <li class="isMT">
+            <a href="" class="f_black">
+              <div class="mT_img">
+                <img src="img/movierun3.jpg" alt="">
+              </div>
+              <p class="mT_tit">에브리씽 에브리웨어 올 앳 원스(자막)</p>
+              <div class="mT_tim">
+                <span>12:25</span>
+              </div>
+            </a>
+          </li>
+          <li class="isMT">
+            <a href="" class="f_black">
+              <div class="mT_img">
+                <img src="img/movierun5.jpg" alt="">
+              </div>
+              <p class="mT_tit">아바타: 물의 길</p>
+              <div class="mT_tim">
+                <span>11:55</span>
+                <span>15:10</span>
+              </div>
+            </a>
+          </li>
+          <li class="isMT">
+            <a href="" class="f_black">
+              <div class="mT_img">
+                <img src="img/movierun1.jpg" alt="">
+              </div>
+              <p class="mT_tit">극장판 짱구는 못말려 수수께끼! 꽃피는 천하떡잎학교(더빙)</p>
+              <div class="mT_tim">
+                <span>10:35</span>
+              </div>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
-<!-- SAC ON SCREEN --> 
+<!-- SAC ON SCREEN -->
 <section class="fif_sec p75">
   <div class="SOS_wrap w1440">
     <h2 class="SOS_tit">
@@ -321,72 +430,72 @@
     </h2>
     <div class="SOS_con p72">
       <div class="item" id="item0">
-        <a href="">
+        <a href="/SOSUser">
           <span class="item_background">
-            <span class="item_moreBtn"> 
+            <span class="item_moreBtn">
               <span>MORE</span>
             </span>
           </span>
         </a>
       </div>
       <div class="item" id="item1">
-        <a href="">
+        <a href="/SOSUser">
           <span class="item_background">
-            <span class="item_moreBtn"> 
+            <span class="item_moreBtn">
               <span>MORE</span>
             </span>
           </span>
         </a>
       </div>
       <div class="item" id="item2">
-        <a href="">
+        <a href="/SOSUser">
           <span class="item_background">
-            <span class="item_moreBtn"> 
+            <span class="item_moreBtn">
               <span>MORE</span>
             </span>
           </span>
         </a>
       </div>
       <div class="item" id="item3">
-        <a href="">
+        <a href="/SOSUser">
           <span class="item_background">
-            <span class="item_moreBtn"> 
+            <span class="item_moreBtn">
               <span>MORE</span>
             </span>
           </span>
         </a>
       </div>
       <div class="item itemN" id="item4">
-        <a href="">
+        <a href="/SOSUser">
           <span class="item_background">
-            <span class="item_moreBtn"> 
+            <span class="item_moreBtn">
               <span>MORE</span>
             </span>
           </span>
         </a>
       </div>
       <div class="item itemN" id="item5">
-        <a href="">
+        <a href="/SOSUser">
           <span class="item_background">
-            <span class="item_moreBtn"> 
+            <span class="item_moreBtn">
               <span>MORE</span>
             </span>
           </span>
         </a>
       </div>
       <div class="item itemN" id="item6">
-        <a href="">
+        <a href="/SOSUser">
           <span class="item_background">
-            <span class="item_moreBtn"> 
+            <span class="item_moreBtn">
               <span>MORE</span>
             </span>
           </span>
         </a>
       </div>
       <div class="item itemN" id="item7">
-        <a href="">
+        <a href="/SOSUser">
           <span class="item_background">
-            <span class="item_moreBtn"> 
+            <span class="item_moreBtn">
               <span>MORE</span>
             </span>
           </span>

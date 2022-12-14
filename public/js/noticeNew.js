@@ -1,7 +1,7 @@
-function modifyN(a){
-  if (a < 10){
+function modifyN(a) {
+  if (a < 10) {
     return '0' + a;
-  } else{
+  } else {
     return a;
   };
 };
@@ -15,3 +15,14 @@ let todate = modifyN(date.getDate());
 let write_time1 = document.querySelector('.write_time1');
 
 window.onload(write_time1.innerText = `${toyear}-${tomonth}-${todate}`);
+
+
+/* 체크박스 중복체크 불가 */
+function NoMultiChk(chk) {
+  var obj = document.querySelectorAll(".checkbox");
+  for (var i = 0; i < obj.length; i++) {
+    if (obj[i] != chk) {
+      obj[i].checked = false;
+    }
+  }
+}

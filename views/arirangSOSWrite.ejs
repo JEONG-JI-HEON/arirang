@@ -4,7 +4,7 @@
     <ul class="sub_nav">
       <li id="sub_menu">
         <div class="sub_bg"></div>
-        <a href="">고객센터</a>
+        <a href="">프로그램</a>
         <ul class="sub_lnb">
           <li><a href="/movieHome">영화</a></li>
           <li><a href="">예매</a></li>
@@ -15,37 +15,37 @@
       </li>
       <li id="sub_menu">
         <div class="sub_bg"></div>
-        <a href="">공지사항</a>
+        <a href="">SOS</a>
         <ul class="sub_lnb">
-          <li><a href="/noticeUser">공지사항</a></li>
-          <li><a href="">자주찾는 질문</a></li>
-          <li><a href="">1:1 문의</a></li>
-          <li><a href="">찾아오시는 길</a></li>
+          <li><a href="">정기상영</a></li>
+          <li><a href="">영화제</a></li>
+          <li><a href="">기획전</a></li>
+          <li><a href="/SOSUser">SOS</a></li>
         </ul>
       </li>
     </ul>
   </div>
 </div>
 <section class="sub_sec">
-  <h2>공지사항</h2>
+  <h2 class="SOS_tit">
+    <p class="f_gray">S</p>AC <p class="f_gray">O</p>N <p class="f_gray">S</p>CREEN
+  </h2>
   <div class="boardList_wrap w1440">
-    <form id="noticeWrite" method="post" action="/noticeWriteInfo">
+    <form id="noticeWrite" method="post" action="/SOSWriteInfo"  enctype="multipart/form-data">
       <div class="boardTitle">
         <label for="">제목</label>
-        <input type="text" name="not_tit">
+        <input type="text" name="sos_tit">
       </div>
       <div class="boardCon">
         <div class="boardTopCon">
-          <input type="checkbox" class="checkbox" name="noticeCheck" id="noticeCheck" onclick="NoMultiChk(this)"><label class="writeNotice" for="noticeCheck">공지로 작성</label>
-          <input type="checkbox" class="checkbox" name="eventCheck" id="eventCheck" onclick="NoMultiChk(this)"><label class="writeNotice" for="eventCheck">이벤트로 작성</label>
-          <input type="checkbox" class="checkbox" name="festivalCheck" id="festivalCheck" onclick="NoMultiChk(this)"><label class="writeNotice" for="festivalCheck">행사로 작성</label>
+          <input type="file" name="sos_img">
           <label for="">ID</label>
           <input type="text" name="write_user">
           <label for="">PW</label>
           <input type="password" name="user_pw">
         </div>
         <div class="boardBottomCon">
-          <textarea name="not_content" id="" cols="30" rows="20"></textarea>
+          <textarea name="sos_content" id="" cols="30" rows="20"></textarea>
         </div>
       </div>
       <div class="boardBtn">

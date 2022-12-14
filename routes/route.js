@@ -9,7 +9,11 @@ const db = require('./../db.js');
 
 /* 메인페이지 */
 router.get('/', (req, res) => {
-  res.render('arirang')
+  db.getMainPage((rows) => {
+    res.render('arirang', {
+      rows: rows
+    });
+  });
 });
 
 /* 영화홈페이지 */
@@ -52,11 +56,14 @@ router.get('/noticeWrite', (req, res) => {
 router.post('/noticeWriteInfo', (req, res) => {
   let param = JSON.parse(JSON.stringify(req.body));
   let write_user = param['write_user'];
+  let noticeCheck = param['noticeCheck'];
+  let eventCheck = param['eventCheck'];
+  let festivalCheck = param['festivalCheck'];
   // let user_pw = param['user_pw'];
   let not_tit = param['not_tit'];
   let not_content = param['not_content'];
 
-  db.insertNotice(write_user, not_tit, not_content, () => {
+  db.insertNotice(write_user, not_tit, not_content, noticeCheck, eventCheck, festivalCheck,() => {
     res.redirect('/noticeUser'); /* 게시판페이지 */
   });
 });
@@ -65,7 +72,7 @@ router.post('/noticeWriteInfo', (req, res) => {
 /* 게시판수정페이지 */
 router.get('/noticeUpdate', (req, res) => {
   let id = req.query.id;
-  db.getNoitceByid(id, (row) => {
+  db.getNoticeByid(id, (row) => {
     res.render('arirangNoticeUpdate', {
       row: row[0]
     })
@@ -97,7 +104,7 @@ router.get('/noticeDelete', (req, res) => {
 /* 게시판의 상세페이지 */
 router.get('/noticeRead', (req, res) => {
   let id = req.query.id;
-  db.getNoitceByid(id, (row) => {
+  db.getNoticeByid(id, (row) => {
     res.render('arirangNoticeRead', {
       row: row[0]
     })
@@ -134,5 +141,98 @@ router.post('/logininfo', (req, res) => {
     }
   });
 })
+
+
+// try {
+//   fs.readFileSync('../public/uploads/'); /* 폴더가 있으면 사용, 터미널 기준 경로!! */
+// } catch (err) {
+//   console.log('폴더가 존재하지 않습니다.');
+//   fs.mkdirSync('../public/uploads/'); /* 폴더가 없으면 생성, 터미널 기준 경로!! */
+// };
+
+const upload = multer({
+  storage: multer.diskStorage({ /* 어디의 저장할건지 정의 */
+    destination(req, file, done) {
+      done(null, '../public/uploads/'); /* 터미널 기준 경로!! */
+    },
+    filename(req, file, done) {
+      const ext = path.extname(file.originalname); /* 파일의 확장자 */
+      done(null, path.basename(file.originalname, ext) + Date.now() + ext); /* 파일명 + 날짜 + 확장자명 */
+    }
+  }),
+  limits: {fileSize: 1024 * 1024 * 15}
+})
+
+/* SOS 메인페이지 */
+router.get('/SOSUser', (req, res) => {
+  db.getSOS((rows) => {
+    res.render('arirangSOSUser', {
+      rows: rows
+    });
+  });
+});
+
+/* SOS 작성페이지 */
+router.get('/SOSWrite', (req, res) => {
+  res.render('arirangSOSWrite');
+});
+
+/* SOS 작성내용을 테이블에 넣기 */
+router.post('/SOSWriteInfo', upload.single('sos_img'), (req, res) => {
+  let param = JSON.parse(JSON.stringify(req.body));
+  let sos_img = 'uploads/' + req.file.filename;
+  let write_user = param['write_user'];
+  let not_tit = param['sos_tit'];
+  let not_content = param['sos_content'];
+
+  db.insertSOS(write_user, not_tit, not_content, sos_img,() => {
+    res.redirect('/sosUser'); /* 게시판페이지 */
+  });
+});
+
+
+/* SOS 수정페이지 */
+router.get('/SOSUpdate', (req, res) => {
+  let id = req.query.id;
+  db.getSOSByid(id, (row) => {
+    res.render('arirangSOSUpdate', {
+      row: row[0]
+    })
+  });
+});
+
+/* SOS 수정내용을 테이블에 넣기 */
+router.post('/SOSUpdateInfo', upload.single('sos_img'), (req, res) => {
+  let param = JSON.parse(JSON.stringify(req.body));
+  let sos_img = 'uploads/' + req.file.filename;
+  let write_user = param['write_user'];
+  let not_tit = param['sos_tit'];
+  let not_content = param['sos_content'];
+
+  db.updateNotice(write_user, not_tit, not_content, sos_img,() => {
+    res.redirect('/SOSUser'); /* 게시판페이지 */
+  });
+});
+
+/* 게시판 삭제할때 */
+router.get('/SOSDelete', (req, res) => {
+  let id = req.query.id;
+  db.deleteSOSByid(id, () => {
+    res.redirect('/SOSUser'); /* 게시판페이지 */
+  });
+});
+
+
+/* 게시판의 상세페이지 */
+router.get('/SOSRead', (req, res) => {
+  let id = req.query.id;
+  db.getSOSByid(id, (row) => {
+    res.render('arirangSOSRead', {
+      row: row[0]
+    })
+  });
+});
+
+
 
 module.exports = router;

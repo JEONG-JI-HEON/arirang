@@ -504,10 +504,11 @@ video {
   box-sizing: border-box;
 }
 
-.nt_tit>a {
+.nt_tit>span {
   padding: 0 20px;
   text-align: center;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .nt_con {
@@ -519,6 +520,21 @@ video {
   padding: 40px;
   box-sizing: border-box;
 }
+
+.nt_con>ul{
+  display: none;
+}
+
+.nt_con>ul.on{
+  display: block;
+}
+
+
+
+
+
+
+
 
 .isNotice {
   padding: 19px 28px 17px;
@@ -649,6 +665,14 @@ video {
   background-color: #fff;
   padding: 42px 35px;
   box-sizing: border-box;
+}
+
+.mt_con>ul{
+  display: none;
+}
+
+.mt_con>ul.on{
+  display: block;
 }
 
 .isMT {
