@@ -107,11 +107,3 @@ function checkName(name) {
   }
   return true;
 }
-
-
-
-let signUpBtn = document.querySelector('.signUp_btn')
-
-signUpBtn.addEventListener('click', () => {
-  checkAll();
-});
