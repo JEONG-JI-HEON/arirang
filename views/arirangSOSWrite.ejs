@@ -31,7 +31,7 @@
     <p class="f_gray">S</p>AC <p class="f_gray">O</p>N <p class="f_gray">S</p>CREEN
   </h2>
   <div class="boardList_wrap w1440">
-    <form id="noticeWrite" method="post" action="/SOSWriteInfo"  enctype="multipart/form-data">
+    <form id="noticeWrite" method="post" action="/SOSWriteInfo" enctype="multipart/form-data">
       <div class="boardTitle">
         <label for="">제목</label>
         <input type="text" name="sos_tit">
@@ -39,10 +39,12 @@
       <div class="boardCon">
         <div class="boardTopCon">
           <input type="file" name="sos_img">
-          <label for="">ID</label>
-          <input type="text" name="write_user">
-          <label for="">PW</label>
-          <input type="password" name="user_pw">
+          <div class="user_label">
+            <label for="">ID</label>
+            <input type="text" name="write_user">
+            <label for="">PW</label>
+            <input type="password" name="user_pw">
+          </div>
         </div>
         <div class="boardBottomCon">
           <textarea name="sos_content" id="" cols="30" rows="20"></textarea>

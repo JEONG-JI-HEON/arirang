@@ -219,7 +219,7 @@
           <% rows.forEach((row, index, array)=>{ %>
           <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
           <li class="isNotice">
-            <a href="/noticeRead">
+            <a href="/noticeRead?id=<%= row.id %>">
               <span class="date f_black">
                 <%= toYear %>-<%= toMonth %>-<%= toDate %>
               </span>
@@ -244,7 +244,7 @@
           <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
           <% if (row.noticeCheck == 'on'){ %>
           <li class="isNotice">
-            <a href="/noticeRead">
+            <a href="/noticeRead?id=<%= row.id %>">
               <span class="date f_black"><%= toYear %>-<%= toMonth %>-<%= toDate %></span>
               <span class="subject">
                 <strong class="f_red">[공지사항]</strong>
@@ -260,7 +260,7 @@
           <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
           <% if (row.eventCheck == 'on'){ %>
           <li class="isNotice">
-            <a href="/noticeRead">
+            <a href="/noticeRead?id=<%= row.id %>">
               <span class="date f_black"><%= toYear %>-<%= toMonth %>-<%= toDate %></span>
               <span class="subject">
                 <strong class="f_red">[이벤트]</strong>
@@ -276,7 +276,7 @@
           <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
           <% if (row.festivalCheck == 'on'){ %>
           <li class="isNotice">
-            <a href="/noticeRead">
+            <a href="/noticeRead?id=<%= row.id %>">
               <span class="date f_black"><%= toYear %>-<%= toMonth %>-<%= toDate %></span>
               <span class="subject">
                 <strong class="f_red">[행사]</strong>

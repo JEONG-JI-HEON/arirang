@@ -36,13 +36,20 @@
       </div>
       <div class="boardCon">
         <div class="boardTopCon">
-          <input type="checkbox" class="checkbox" name="noticeCheck" id="noticeCheck" onclick="NoMultiChk(this)"><label class="writeNotice" for="noticeCheck">공지로 작성</label>
-          <input type="checkbox" class="checkbox" name="eventCheck" id="eventCheck" onclick="NoMultiChk(this)"><label class="writeNotice" for="eventCheck">이벤트로 작성</label>
-          <input type="checkbox" class="checkbox" name="festivalCheck" id="festivalCheck" onclick="NoMultiChk(this)"><label class="writeNotice" for="festivalCheck">행사로 작성</label>
-          <label for="">ID</label>
-          <input type="text" name="write_user">
-          <label for="">PW</label>
-          <input type="password" name="user_pw">
+          <div class="checkboxs">
+            <input type="checkbox" class="checkbox" name="noticeCheck" id="noticeCheck" onclick="NoMultiChk(this)">
+            <label class="writeNotice" for="noticeCheck">공지로 작성</label>
+            <input type="checkbox" class="checkbox" name="eventCheck" id="eventCheck" onclick="NoMultiChk(this)">
+            <label class="writeNotice" for="eventCheck">이벤트로 작성</label>
+            <input type="checkbox" class="checkbox" name="festivalCheck" id="festivalCheck" onclick="NoMultiChk(this)">
+            <label class="writeNotice" for="festivalCheck">행사로 작성</label>
+          </div>
+          <div class="user_label">
+            <label for="">ID</label>
+            <input type="text" name="write_user">
+            <label for="">PW</label>
+            <input type="password" name="user_pw">
+          </div>
         </div>
         <div class="boardBottomCon">
           <textarea name="not_content" id="" cols="30" rows="20"></textarea>

@@ -33,7 +33,7 @@ const handleSelect = (item) => {
       PlaceCon.classList.remove('on');
     })
     moviePlaceCon[1].classList.add('on');
-  } else{
+  } else {
     moviePlaceCon.forEach(PlaceCon => {
       PlaceCon.classList.remove('on');
     })
@@ -111,6 +111,11 @@ noticeAll.addEventListener('click', () => {
   })
   noticeCon[0].classList.add('on');
   noticeAll.classList.add('bold');
+  /* 5개 이상은 제거 */
+  let noticeData = document.querySelector('.nt_con ul.on');
+  while (noticeData.children.length > 5) {
+    noticeData.removeChild(noticeData.children[5]);
+  };
 })
 
 /* 공지사항 */
@@ -123,6 +128,11 @@ noticeReal.addEventListener('click', () => {
   })
   noticeCon[1].classList.add('on');
   noticeReal.classList.add('bold');
+  /* 5개 이상은 제거 */
+  let noticeData = document.querySelector('.nt_con ul.on');
+  while (noticeData.children.length > 5) {
+    noticeData.removeChild(noticeData.children[5]);
+  };
 })
 
 /* 이벤트 */
@@ -135,6 +145,11 @@ noticeEvent.addEventListener('click', () => {
   })
   noticeCon[2].classList.add('on');
   noticeEvent.classList.add('bold');
+  /* 5개 이상은 제거 */
+  let noticeData = document.querySelector('.nt_con ul.on');
+  while (noticeData.children.length > 5) {
+    noticeData.removeChild(noticeData.children[5]);
+  };
 })
 
 /* 행사 */
@@ -147,11 +162,15 @@ noticeFetival.addEventListener('click', () => {
   })
   noticeCon[3].classList.add('on');
   noticeFetival.classList.add('bold');
+  /* 5개 이상은 제거 */
+  let noticeData = document.querySelector('.nt_con ul.on');
+  while (noticeData.children.length > 5) {
+    noticeData.removeChild(noticeData.children[5]);
+  };
 })
 
 /* 5개 이상은 제거 */
 let noticeData = document.querySelector('.nt_con ul.on');
-console.log(noticeData.children.length);
-while (noticeData.children.length > 5){
+while (noticeData.children.length > 5) {
   noticeData.removeChild(noticeData.children[5]);
 };

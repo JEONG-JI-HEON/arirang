@@ -65,6 +65,7 @@
 .boardList_table td{
   border-bottom: 1px solid #d4d4d4;
   padding: 14px 3px;
+  box-sizing: border-box;
   font-size: 18px;
   font-weight: 400;
   color: #555;

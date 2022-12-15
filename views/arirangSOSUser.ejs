@@ -42,24 +42,24 @@
     </form>
   </div>
   <div class="boardList_wrap w1440">
-    <table class="boardList_table">
+    <table class="boardList_table sos_table">
       <thead>
         <tr>
-          <td>번호</td>
-          <td>제목</td>
-          <td>작성자</td>
-          <td>작성일자</td>
-          <td>조회수</td>
-          <td>수정</td>
-          <td>삭제</td>
+          <th scope="col" class="num" style="width:10%">이미지</th>
+          <th scope="col" class="title" style="width:42%">제목</th>
+          <th scope="col" style="width:14%">작성자</th>
+          <th scope="col" class="date" style="width:14%">작성일자</th>
+          <th scope="col" class="view_cnt" style="width:10%">조회수</th>
+          <th scope="col" class="file" style="width:5%">수정</th>
+          <th scope="col" class="file" style="width:5%">삭제</th>
         </tr>
       </thead>
       <tbody>
         <% rows.forEach((row, index, array)=>{ %>
         <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
         <tr>
-          <td class="num">
-            <%= rows.length - index %>
+          <td class="num ">
+            <img src="<%= row.sos_img %>" alt="">
           </td>
           <td class="subject">
             <p class="stitle">

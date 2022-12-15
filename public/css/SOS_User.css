@@ -3,3 +3,15 @@
   display: block;
   text-align: center;
 }
+
+.num img{
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+
+.sos_table td{
+  vertical-align: middle;
+}

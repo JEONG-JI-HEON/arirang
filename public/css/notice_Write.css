@@ -54,19 +54,41 @@
 .boardTopCon{
   padding-bottom: 18px;
   display: flex;
-  align-items: center;
-  flex-shrink: 1;
+  /* align-items: center; */
+  width: 100%;
 }
 
-.boardTopCon .writeNotice{
-  padding-right: 100px;
+.boardTopCon input[type='file']{
+  line-height: 45px;
+}
+
+.checkboxs{
+  display: flex;
+}
+
+.checkboxs .writeNotice{
+  width: 100%;
+  min-width: 120px;
+  margin-left: 30px;
+  margin-right: 50px;
+  box-sizing: border-box;
+  font-size: 14px;
   display: flex;
   align-items: center;
 }
 
-.boardTopCon label{
-  padding-left: 30px;
-  padding-right: 30px;
+.checkboxs .writeNotice:nth-child(2){
+  margin-left: 0;
+}
+
+.checkboxs .writeNotice:last-child{
+  margin-right: 0;
+}
+
+.boardTopCon .user_label{
+  margin-left: 30px;
+  display: flex;
+  gap: 20px;
 }
 
 input[id="noticeCheck"]:checked + label{
@@ -90,6 +112,11 @@ input[id="festivalCheck"]:checked + label{
   width: 156px;
   height: 46px;
   font-size: 20px;
+}
+
+
+.boardTopCon .user_label input{
+  width: 50%;
 }
 
 .boardBottomCon textarea{
@@ -136,10 +163,33 @@ input[id="festivalCheck"]:checked + label{
 }
 /*** 1440px ***/
 
-/*** 768px ***/
-@media (max-width: 768px){
-  .boardTopCon .writeNotice {
-    padding-right: 0px;
+
+/*** 1200px ***/
+@media (max-width: 1200px){
+  .boardTopCon{
+    flex-direction: column;
   }
+  
+  .checkboxs{
+    margin-bottom: 20px;
+  }
+
+  .boardTopCon .user_label:nth-child(2) {
+    margin-left: 0px;
+  }
+
 }
-/*** 768px ***/
+/*** 1200px ***/
+
+
+/*** 579px ***/
+@media (max-width: 579px){
+  .checkboxs .writeNotice {
+    min-width: 60px;
+    margin-left: 10px;
+    margin-right: 30px;
+    font-size: 12px;
+}
+  
+}
+/*** 579px ***/
