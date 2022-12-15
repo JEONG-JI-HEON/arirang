@@ -103,7 +103,7 @@ function getSOSByid(id, callback){
   });
 };
 
-// sos의 수정할때 (테이블에 수정된내용을 넣기위함)
+// sos 수정할때 (테이블에 수정된내용을 넣기위함)
 function updateSOS(id, write_user, not_tit, not_content, sos_img, callback){
   connection.query(`UPDATE arirangsos SET create_time=NOW(), write_user='${write_user}', sos_tit='${not_tit}', sos_content='${not_content}', sos_img='${sos_img}' WHERE id='${id}'`, (err)=>{
     if(err) throw err;

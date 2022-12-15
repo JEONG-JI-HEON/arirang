@@ -82,12 +82,12 @@ router.get('/noticeUpdate', (req, res) => {
 /* 게시판수정내용을 테이블에 넣기 */
 router.post('/noticeUpdateInfo', (req, res) => {
   let param = JSON.parse(JSON.stringify(req.body));
+  let id = param['id'];
   let write_user = param['write_user'];
-  // let user_pw = param['user_pw'];
   let not_tit = param['not_tit'];
   let not_content = param['not_content'];
 
-  db.updateNotice(write_user, not_tit, not_content, () => {
+  db.updateNotice(id, write_user, not_tit, not_content, () => {
     res.redirect('/noticeUser'); /* 게시판페이지 */
   });
 });
@@ -182,7 +182,7 @@ router.post('/SOSWriteInfo', upload.single('sos_img'), (req, res) => {
   let param = JSON.parse(JSON.stringify(req.body));
   let sos_img = 'uploads/' + req.file.filename;
   let write_user = param['write_user'];
-  let not_tit = param['sos_tit'];
+  let not_tit = param['sos_tit']; 
   let not_content = param['sos_content'];
 
   db.insertSOS(write_user, not_tit, not_content, sos_img,() => {
@@ -204,17 +204,18 @@ router.get('/SOSUpdate', (req, res) => {
 /* SOS 수정내용을 테이블에 넣기 */
 router.post('/SOSUpdateInfo', upload.single('sos_img'), (req, res) => {
   let param = JSON.parse(JSON.stringify(req.body));
+  let id = param['id'];
   let sos_img = 'uploads/' + req.file.filename;
   let write_user = param['write_user'];
   let not_tit = param['sos_tit'];
   let not_content = param['sos_content'];
 
-  db.updateNotice(write_user, not_tit, not_content, sos_img,() => {
+  db.updateSOS(id, write_user, not_tit, not_content, sos_img,() => {
     res.redirect('/SOSUser'); /* 게시판페이지 */
   });
 });
 
-/* 게시판 삭제할때 */
+/* SOS 삭제할때 */
 router.get('/SOSDelete', (req, res) => {
   let id = req.query.id;
   db.deleteSOSByid(id, () => {
@@ -223,7 +224,7 @@ router.get('/SOSDelete', (req, res) => {
 });
 
 
-/* 게시판의 상세페이지 */
+/* SOS의 상세페이지 */
 router.get('/SOSRead', (req, res) => {
   let id = req.query.id;
   db.getSOSByid(id, (row) => {
