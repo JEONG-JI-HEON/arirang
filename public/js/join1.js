@@ -33,13 +33,13 @@ function e(){
 }
 
 let joinBtn = document.querySelector('.join_btn1');
-let joinCon = document.querySelector('.join_con')
+let join1Con = document.querySelector('.join1_con')
 
 joinBtn.addEventListener('click',()=>{
   if(allchecked.checked == true){
     
   } else{
     alert('필수 약관에 모두 동의해주세요.')
-    joinCon.action = 'http://localhost:3000/join1'
+    join1Con.action = '/join1'
   }
 })

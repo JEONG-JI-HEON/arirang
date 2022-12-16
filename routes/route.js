@@ -113,14 +113,12 @@ router.get('/noticeRead', (req, res) => {
 
 
 
-
 /* 회원가입 내용을 테이블에 넣기 */
 router.post('/joininfo', (req, res) => {
   let param = JSON.parse(JSON.stringify(req.body));
   let user_name = param['user_name'];
   let user_id = param['user_id'];
   let user_pw = param['user_pw'];
-  // let user_pwCheck = param['user_pwCheck'];
   let user_birth = param['user_birth'];
   let user_phoneNum = param['user_phoneNum'];
   db.insertUserInfo(user_name, user_id, user_pw, user_birth, user_phoneNum, ()=>{

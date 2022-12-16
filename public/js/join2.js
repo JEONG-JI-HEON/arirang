@@ -11,6 +11,12 @@ function checkAll() {
   else if (!checkName(form.user_name.value)) {
     return false;
   }
+  else if (!checkNull(form.user_birth.value, '생년월일를')) {
+    return false;
+  }
+  else if (!checkNull(form.user_phoneNum.value, '휴대전화를')) {
+    return false;
+  }
   // 회원가입 완료
   alert("회원가입에 성공하였습니다.");
 }
@@ -108,10 +114,3 @@ function checkName(name) {
   return true;
 }
 
-
-
-let signUpBtn = document.querySelector('.signUp_btn')
-
-signUpBtn.addEventListener('click', () => {
-  checkAll();
-});

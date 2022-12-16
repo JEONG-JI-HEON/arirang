@@ -2,6 +2,10 @@ a{
   text-decoration: none;
 }
 
+textarea{
+  resize: none;
+}
+
 .w1440{
   width: 1440px;
   margin: 0 auto;

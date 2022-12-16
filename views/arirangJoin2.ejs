@@ -1,6 +1,7 @@
+<title>아리랑시네마센터 회원가입</title>
 <section class="sub_sec">
   <h2>회원가입</h2>
-  <form name="form" class="join2_con w1440" method="post" action="/joininfo">
+  <form name="form" class="join2_con w1440" method="post" action="/joininfo" onsubmit="return checkAll()">
     <table>
       <tr>
         <td class="join_tit">
@@ -37,7 +38,8 @@
         <td>
           <div class="birth_wrap">
             <label class="">생년월일</label>
-            <input type="text" name="user_birth" id="user_birth" placeholder="숫자만 입력">
+            <input type="text" name="user_birth" id="user_birth" placeholder="숫자만 입력"
+              oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
           </div>
         </td>
       </tr>
@@ -46,8 +48,9 @@
           <div class="phone_wrap">
             <label class="">휴대전화</label>
             <div class="phoneInput_wrap">
-              <input type="text" name="user_phoneNum" id="user_phoneNum" placeholder="숫자만 입력">
-              <input class="cert_btn" type="button" value="인증번호받기">
+              <input type="text" name="user_phoneNum" id="user_phoneNum" placeholder="숫자만 입력"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+              <input class="cert_btn" type="button" value="인증번호받기" onclick="javascript:alert('준비중입니다.')">
             </div>
             <input type="text" name="" id="certiCheck" placeholder="인증번호를 입력하세요.">
           </div>
@@ -59,3 +62,4 @@
     </table>
   </form>
 </section>
+<script src="js/join2.js"></script>
