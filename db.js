@@ -12,7 +12,7 @@ connection.connect(function (err) {
   console.log("Connected!");
 });
 
-// 메인페이지에 게시판 테이블 내용을 출력할때
+// 메인페이지에 게시판 테이블 내용과 sos 테이블 내용을 출력할때
 function getMainPage(callback) {
   connection.query('SELECT * FROM arirangnotice ORDER BY id DESC;' + 'SELECT * FROM arirangsos ORDER BY id DESC LIMIT 8;', (err, rows, fields) => {
     if (err) throw err;
