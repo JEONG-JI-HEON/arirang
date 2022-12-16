@@ -217,7 +217,7 @@
       </nav>
       <div class="nt_con">
         <ul class="noticeAll on">
-          <% rows.forEach((row, index, array)=>{ %>
+          <% rowNotice.forEach((row, index, array)=>{ %>
           <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
           <li class="isNotice">
             <a href="/noticeRead?id=<%= row.id %>">
@@ -241,7 +241,7 @@
           <% }); %>
         </ul>
         <ul class="noticeReal">
-          <% rows.forEach((row, index, array)=>{ %>
+          <% rowNotice.forEach((row, index, array)=>{ %>
           <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
           <% if (row.noticeCheck == 'on'){ %>
           <li class="isNotice">
@@ -257,7 +257,7 @@
           <% }); %>
         </ul>
         <ul class="noticeEvent">
-          <% rows.forEach((row, index, array)=>{ %>
+          <% rowNotice.forEach((row, index, array)=>{ %>
           <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
           <% if (row.eventCheck == 'on'){ %>
           <li class="isNotice">
@@ -273,7 +273,7 @@
           <% }); %>
         </ul>
         <ul class="noticeFetival">
-          <% rows.forEach((row, index, array)=>{ %>
+          <% rowNotice.forEach((row, index, array)=>{ %>
           <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
           <% if (row.festivalCheck == 'on'){ %>
           <li class="isNotice">
@@ -430,8 +430,9 @@
       <p class="f_gray">S</p>AC <p class="f_gray">O</p>N <p class="f_gray">S</p>CREEN
     </h2>
     <div class="SOS_con p72">
-      <div class="item" id="item0">
-        <a href="/SOSUser">
+      <% rowSos.forEach((row, index, array)=>{ %>
+      <div class="item" style="background-image: url('<%= row.sos_img %>');">
+        <a href="/SOSRead?id=<%= row.id %>">
           <span class="item_background">
             <span class="item_moreBtn">
               <span>MORE</span>
@@ -439,69 +440,7 @@
           </span>
         </a>
       </div>
-      <div class="item" id="item1">
-        <a href="/SOSUser">
-          <span class="item_background">
-            <span class="item_moreBtn">
-              <span>MORE</span>
-            </span>
-          </span>
-        </a>
-      </div>
-      <div class="item" id="item2">
-        <a href="/SOSUser">
-          <span class="item_background">
-            <span class="item_moreBtn">
-              <span>MORE</span>
-            </span>
-          </span>
-        </a>
-      </div>
-      <div class="item" id="item3">
-        <a href="/SOSUser">
-          <span class="item_background">
-            <span class="item_moreBtn">
-              <span>MORE</span>
-            </span>
-          </span>
-        </a>
-      </div>
-      <div class="item itemN" id="item4">
-        <a href="/SOSUser">
-          <span class="item_background">
-            <span class="item_moreBtn">
-              <span>MORE</span>
-            </span>
-          </span>
-        </a>
-      </div>
-      <div class="item itemN" id="item5">
-        <a href="/SOSUser">
-          <span class="item_background">
-            <span class="item_moreBtn">
-              <span>MORE</span>
-            </span>
-          </span>
-        </a>
-      </div>
-      <div class="item itemN" id="item6">
-        <a href="/SOSUser">
-          <span class="item_background">
-            <span class="item_moreBtn">
-              <span>MORE</span>
-            </span>
-          </span>
-        </a>
-      </div>
-      <div class="item itemN" id="item7">
-        <a href="/SOSUser">
-          <span class="item_background">
-            <span class="item_moreBtn">
-              <span>MORE</span>
-            </span>
-          </span>
-        </a>
-      </div>
+      <% }); %>
     </div>
   </div>
 </section>

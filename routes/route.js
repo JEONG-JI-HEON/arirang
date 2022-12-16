@@ -9,9 +9,10 @@ const db = require('./../db.js');
 
 /* 메인페이지 */
 router.get('/', (req, res) => {
-  db.getMainPage((rows) => {
+  db.getMainPage((rowNotice, rowSos) => {
     res.render('arirang', {
-      rows: rows
+      rowNotice: rowNotice,
+      rowSos: rowSos
     });
   });
 });
