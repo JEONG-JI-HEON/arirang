@@ -121,8 +121,8 @@
           <td class="cnt">
             <%= row.view_cnt %>
           </td>
-          <td><input type="button" value="수정하기" onclick="javascript:location.href='/noticeUpdate?id=<%= row.id %>'"></td>
-          <td><input type="button" value="삭제하기" onclick="javascript:location.href='/noticeDelete?id=<%= row.id %>'"></td>
+          <td><input type="button" value="수정" onclick="javascript:location.href='/noticeUpdate?id=<%= row.id %>'"></td>
+          <td><input type="button" value="삭제" onclick="javascript:location.href='/noticeDelete?id=<%= row.id %>'"></td>
         </tr>
         <% }); %>
       </tbody>

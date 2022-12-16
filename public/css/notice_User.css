@@ -69,6 +69,7 @@
   font-size: 18px;
   font-weight: 400;
   color: #555;
+  vertical-align: middle;
 }
 
 .boardList_table th {
@@ -200,6 +201,13 @@
   color: #fff;
 }
 
+input[value="수정"], input[value="삭제"]{
+  background-color: #A6B8C4;
+  cursor: pointer;
+  border: none;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
 /*** 999px ***/
 @media (max-width: 999px){
   .boardList_table td{
@@ -208,11 +216,95 @@
 }
 /*** 999px ***/
 
+/*** 750px ***/
+@media (max-width: 750px){
+  .boardList_bot{
+    padding-bottom: 80px;
+
+  }
+  .write_btn{
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+
+
+}
+/*** 750px ***/
+
+
 /*** 699px ***/
 @media (max-width: 699px){
-  .boardList_table td{
+  .boardList_table td, .boardList_table th{
     font-size: 12px;
     padding: 14px 0;
   }
+
+  #notice_select{
+    min-width: 100px;
+  }
+
+  #notice_search{
+    width: 200px;
+  }
 }
 /*** 699px ***/
+
+/*** 520px ***/
+@media (max-width: 520px){
+  .boardList_table td, .boardList_table th{
+    padding: 7px 0;
+  }
+
+  .title_wrap{
+    height: 70px;
+  }
+
+  #notice_select{
+    min-width: 50px;
+    height: 40px;
+    font-size: 10px;
+  }
+
+  #notice_search{
+    width: 150px;
+    padding: 10px;
+    height: 40px;
+    font-size: 10px;
+  }
+
+  #search_btn{
+    width: 40px;
+    height: 40px;
+  }
+
+  .pageList a:nth-child(11){
+    display: none;
+  }
+}
+/*** 520px ***/
+
+/*** 490px ***/
+@media (max-width: 490px){
+  .pageList a:nth-child(10){
+    display: none;
+  }
+}
+/*** 490px ***/
+
+/*** 460px ***/
+@media (max-width: 460px){
+  .pageList a:nth-child(9){
+    display: none;
+  }
+}
+/*** 460px ***/
+
+/*** 430px ***/
+@media (max-width: 430px){
+  .pageList a:nth-child(8){
+    display: none;
+  }
+}
+/*** 430px ***/

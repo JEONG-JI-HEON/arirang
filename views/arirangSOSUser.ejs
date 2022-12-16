@@ -78,8 +78,8 @@
           <td class="cnt">
             <%= row.view_cnt %>
           </td>
-          <td><input type="button" value="수정하기" onclick="javascript:location.href='/SOSUpdate?id=<%= row.id %>'"></td>
-          <td><input type="button" value="삭제하기" onclick="javascript:location.href='/SOSDelete?id=<%= row.id %>'"></td>
+          <td><input type="button" value="수정" onclick="javascript:location.href='/SOSUpdate?id=<%= row.id %>'"></td>
+          <td><input type="button" value="삭제" onclick="javascript:location.href='/SOSDelete?id=<%= row.id %>'"></td>
         </tr>
         <% }); %>
       </tbody>
