@@ -6,6 +6,10 @@ textarea{
   resize: none;
 }
 
+input{
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
 .w1440{
   width: 1440px;
   margin: 0 auto;

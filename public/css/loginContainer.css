@@ -1,5 +1,4 @@
-.login_box{
-  /* height: 595px; */
+.login_box {
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -8,28 +7,28 @@
   box-sizing: border-box;
 }
 
-.login_inner{
+.login_inner {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.login_inner>div>h3{
+.login_inner>div>h3 {
   text-align: center;
   line-height: 50px;
   border-bottom: 1px solid;
 }
 
-.login_form{
+.login_form {
   flex: 1;
   border-right: 1px solid;
 }
 
-.login_inner form{
+.login_inner form {
   padding-top: 20px;
 }
 
-form.login{
+form.login {
   width: 100%;
   padding-right: 20px;
   box-sizing: border-box;
@@ -38,13 +37,14 @@ form.login{
   gap: 20px;
   flex-shrink: 1;
 }
-.login_inputWrap{
-  width: 75%;
+
+.login_inputWrap {
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.login input{
+.login input {
   width: 100%;
   padding: 15px 30px;
   box-sizing: border-box;
@@ -54,11 +54,11 @@ form.login{
   margin-top: 20px;
 }
 
-.login input:first-child{
+.login input:first-child {
   margin-top: 0;
 }
 
-.login>.login_btn{
+.login>.login_btn {
   width: 120px;
   height: 120px;
   margin-top: 0;
@@ -67,9 +67,9 @@ form.login{
   cursor: pointer;
 }
 
-.login_bot{
+.login_bot {
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
   width: 100%;
   margin-top: 20px;
   padding-right: 20px;
@@ -77,20 +77,16 @@ form.login{
   position: relative;
 }
 
-.login_bot>label{
-  position: absolute;
-  left: 0;
-}
 
-input[id="id_check"]:checked + label{
+input[id="id_check"]:checked+label {
   background-image: url('../img/checkboxAfter.png');
 }
 
-.login_menu{
+.login_menu {
   display: inline-block;
 }
 
-.login_menu>a::after{
+.login_menu>a::after {
   content: '';
   position: absolute;
   left: -11px;
@@ -101,34 +97,34 @@ input[id="id_check"]:checked + label{
   background: #A6B8C4;
 }
 
-.login_menu>a:first-child::after{
+.login_menu>a:first-child::after {
   display: none;
 }
 
-.login_menu>a{
+.login_menu>a {
   font-size: 12px;
   color: #000;
   margin-left: 20px;
   position: relative;
 }
 
-.login_menu>a:first-child{
+.login_menu>a:first-child {
   margin-left: 0;
 }
 
-.non_form{
+.non_form {
   flex: 1;
   position: relative;
 }
 
-.non{
+.non {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 20px;
 }
 
-.non label{
+.non label {
   font-size: 14px;
   width: 20%;
   text-align: right;
@@ -136,7 +132,7 @@ input[id="id_check"]:checked + label{
   margin-right: 20px;
 }
 
-.non input{
+.non input {
   width: 70%;
   padding: 15px 30px;
   box-sizing: border-box;
@@ -145,18 +141,18 @@ input[id="id_check"]:checked + label{
   border-radius: 4px;
 }
 
-.non>div{
+.non>div {
   width: 90%;
   display: flex;
   justify-content: right;
   flex-shrink: 1;
 }
 
-.non>div:first-child{
+.non>div:first-child {
   margin-top: 0;
 }
 
-.non>.non_btn{
+.non>.non_btn {
   width: 120px;
   background-color: #111;
   color: #fff;
@@ -165,41 +161,102 @@ input[id="id_check"]:checked + label{
   cursor: pointer;
 }
 
-.login_Adv{
+.login_Adv {
   padding-bottom: 60px;
 }
 
-.login_Adv img{
+.login_Adv img {
   display: block;
   width: 100%;
 }
 
 /*** 1199px ***/
-@media (max-width: 1199px){
-  .login_inner{
+@media (max-width: 1199px) {
+  .login_inner {
     flex-direction: column;
   }
 
-  .login_form{
+  .login_form {
     flex: 1;
     border-right: 0px;
   }
 
-  form.login{
+  form.login {
     padding-right: 0px;
   }
 
-  .non>div{
+
+  .login_bot {
+    padding-right: 0;
+  }
+
+  .non>div {
     width: 100%;
     justify-content: space-between;
   }
-  .non label{
+
+  .non label {
     width: 20%;
     text-align: left;
   }
 
-  .non input{
+  .non input {
     width: 80%;
   }
 }
-/*** 1400px ***/
+
+/*** 1199px ***/
+
+
+
+/*** 599px ***/
+@media (max-width: 599px) {
+  .login_box{
+    padding: 60px 20px 70px 20px;
+  }
+  form.login{
+    gap: 10px;
+  }
+  .login input{
+    padding: 10px 15px;
+    margin-top: 10px;
+    font-size: 10px;
+  }
+
+  .login>.login_btn{
+    width: 80px;
+    height: 80px;
+  }
+
+  .login_bot {
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin-top: 10px;
+  }
+
+  .non{
+    gap: 10px;
+  }
+  .non>div{
+    flex-direction: column;
+  }
+  
+  .non input{
+    width: 100%;
+    padding: 10px 15px;
+  }
+  
+  .non label{
+    width: 100%;
+    font-size: 12px;
+    margin-right: 0;
+  }
+
+  .non>.non_btn{
+    width: 100px;
+    font-size: 10px;
+  }
+}
+
+/*** 599px ***/
