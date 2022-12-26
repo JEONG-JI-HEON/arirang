@@ -44,10 +44,8 @@ const handleSelect = (item) => {
   /* 아리랑인디웨이브일때 크기 조절 */
   if (selectNow.innerHTML == '아리랑인디웨이브') {
     selectNow.style.padding = '0 10px';
-    selectNow.style.fontSize = '16px';
   } else {
     selectNow.style.padding = '0 50px';
-    selectNow.style.fontSize = '18px';
   };
 };
 
@@ -99,7 +97,7 @@ let noticetabBtn = document.querySelectorAll('.nt_tit span');
 let noticeAll = document.querySelector('.nt_tit>span:first-child');
 let noticeReal = document.querySelector('.nt_tit>span:nth-child(2)');
 let noticeEvent = document.querySelector('.nt_tit>span:nth-child(3)');
-let noticeFetival = document.querySelector('.nt_tit>span:last-child');
+let noticeFetival = document.querySelector('.nt_tit>span:nth-child(4)');
 
 /* 전체 */
 noticeAll.addEventListener('click', () => {

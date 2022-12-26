@@ -511,6 +511,24 @@ video {
   cursor: pointer;
 }
 
+.nt_tit>.plus_btn {
+  width: 30px;
+  height: 30px;
+  background-image: url(../../img/plus.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+}
+
+.nt_tit>.plus_btn>a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .nt_con {
   position: absolute;
   top: 80px;
@@ -521,11 +539,11 @@ video {
   box-sizing: border-box;
 }
 
-.nt_con>ul{
+.nt_con>ul {
   display: none;
 }
 
-.nt_con>ul.on{
+.nt_con>ul.on {
   display: block;
 }
 
@@ -574,6 +592,7 @@ video {
   width: 40%;
   font-size: 24px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
   box-sizing: border-box;
@@ -667,11 +686,11 @@ video {
   box-sizing: border-box;
 }
 
-.mt_con>ul{
+.mt_con>ul {
   display: none;
 }
 
-.mt_con>ul.on{
+.mt_con>ul.on {
   display: block;
 }
 
@@ -777,6 +796,7 @@ video {
   transform: translateX(-50%);
   display: inline-block;
   padding: 12px 22px;
+  box-sizing: border-box;
   transition: all .3s ease;
   font-weight: 300;
 }
@@ -1029,6 +1049,10 @@ video {
     top: 540px;
     width: 100%;
   }
+
+  .SOS_tit {
+    font-size: 24px;
+  }
 }
 
 /*** 999px ***/
@@ -1069,7 +1093,6 @@ video {
 
   .search_wrap {
     flex-direction: column;
-    justify-content: space-between;
   }
 
   .search_title {
@@ -1133,7 +1156,7 @@ video {
   .SOS_con .item:nth-child(5),
   .SOS_con .item:nth-child(6),
   .SOS_con .item:nth-child(7),
-  .SOS_con .item:nth-child(8){
+  .SOS_con .item:nth-child(8) {
     display: none;
   }
 
@@ -1198,6 +1221,10 @@ video {
     width: 130px;
   }
 
+  .SOS_tit {
+    font-size: 20px;
+  }
+
   .banner {
     flex-wrap: wrap;
   }
@@ -1211,19 +1238,16 @@ video {
     padding: 10px;
   }
 
-  .bnr_item>a{
-    border-right: none;
-    
-  }
-
   .bnr_item:last-child {
     border-bottom: none;
   }
 
   .bnr_item>a {
+    border-right: none;
     width: 100%;
     padding: 20px 10px 20px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -1270,6 +1294,13 @@ video {
     font-size: 16px;
   }
 
+  .nt_tit>.plus_btn {
+    width: 24px;
+    height: 24px;
+    top: 10px;
+    right: 10px;
+  }
+
   .nt_con {
     top: 60px;
   }
@@ -1311,7 +1342,7 @@ video {
 /*** 499px ***/
 
 
-/*** 479px ***/
+/*** 478px ***/
 @media (max-width: 478px) {
   .rank_img {
     width: 80%;
@@ -1321,12 +1352,12 @@ video {
 
   .like_btn {
     padding: 10px 20px;
-    top: 45%;
+    top: 43%;
   }
 
   .ticket_btn {
     padding: 10px 15px;
-    top: 55%;
+    top: 57%;
   }
 
 
@@ -1334,12 +1365,132 @@ video {
     left: 15%;
   }
 
-  .nt_tit>a {
+  .nt_tit>span {
     padding: 0 10px;
   }
 
+  .item_moreBtn>span {
+    font-size: 12px;
+  }
 }
 
 
-/*** 479px ***/
+/*** 478px ***/
+
+/*** 390px ***/
+@media (max-width: 390px) {
+  .bnr_item>a>p{
+    width: 70%;
+  }
+  .pbtn{
+    width: 25%;
+  }
+}
+/*** 390px ***/
+
+
+
+/*** 360px ***/
+@media (max-width: 360px) {
+  .sec_sec {
+    height: 120px;
+  }
+
+  .search_title>h2 {
+    font-size: 16px;
+  }
+
+  .search_box {
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .like_btn {
+    font-size: 12px;
+    padding: 5px 10px;
+
+  }
+
+  .ticket_btn {
+    font-size: 12px;
+    padding: 5px 7px;
+
+  }
+
+  .rank_title>h2 {
+    font-size: 16px;
+  }
+
+  .nowTime {
+    font-size: 10px;
+    padding-left: 10px;
+  }
+
+  .nt_tit>.plus_btn {
+    display: none;
+  }
+
+  .mt_tit,
+  .mt_con {
+    padding: 10px;
+  }
+
+  .mt_tit h2 {
+    font-size: 12px;
+  }
+
+  .selectNow {
+    font-size: 12px;
+    padding: 0 30px;
+  }
+
+  .select_bg {
+    top: 20px;
+  }
+
+  .select_bg.active {
+    height: 90px;
+  }
+
+  .moviePlaceL {
+    top: 15px;
+  }
+
+  .moviePlaceL.active {
+    height: 90px;
+  }
+
+  .moviePlaceI {
+    font-size: 12px;
+  }
+
+  .SOS_tit {
+    font-size: 16px;
+  }
+
+  .item_moreBtn {
+    padding: 6px 11px;
+  }
+
+  .bnr_item>a>p {
+    font-size: 12px;
+    width: 50%;
+  }
+  .pbtn{
+    font-size: 10px;
+    padding: 3px 5px;
+  }
+}
+
+/*** 360px ***/
+
+
+/*** 315px ***/
+@media (max-width: 315px) {
+  .nt_tit>span {
+    padding: 0;
+  }
+}
+
+/*** 315px ***/
 /* media */

@@ -207,5 +207,21 @@
     display: none;
   }
 
+  .sub_sec>h2{
+    height: 100px;
+    line-height: 100px;
+    font-size: 36px;
+  }
 }
 /*** 768px ***/
+
+/*** 520px ***/
+@media (max-width: 520px){
+  .sub_sec>h2{
+    height: 80px;
+    line-height: 80px;
+    font-size: 30px;
+  }
+
+}
+/*** 520px ***/

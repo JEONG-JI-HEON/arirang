@@ -235,9 +235,12 @@ router.get('/SOSDelete', (req, res) => {
 /* SOS의 상세페이지 */
 router.get('/SOSRead', (req, res) => {
   let id = req.query.id;
-  db.getSOSByid(id, (row) => {
+  db.getSOSByid(id, (rows, row_prev, row_next, rowid, viewCntPlus) => {
     res.render('arirangSOSRead', {
-      row: row[0]
+      row: rows[0],
+      row1: row_prev[0],
+      row2: row_next[0],
+      viewCntPlus: viewCntPlus
     })
   });
 });

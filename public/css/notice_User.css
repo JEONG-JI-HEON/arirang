@@ -1,5 +1,7 @@
 .title_wrap{
-  height: 100px;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
   background-color: #fff;
   display: flex;
   justify-content: right;
@@ -258,7 +260,7 @@ input[value="수정"], input[value="삭제"]{
   }
 
   .title_wrap{
-    height: 70px;
+    /* height: 70px; */
   }
 
   #notice_select{

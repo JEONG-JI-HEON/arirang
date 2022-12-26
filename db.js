@@ -50,9 +50,6 @@ function getNoticeByid(id, callback){
   });
 };
 
-
-
-
 // 게시판의 수정할때 (테이블에 수정된내용을 넣기위함)
 function updateNotice(id, write_user, not_tit, not_content, callback){
   connection.query(`UPDATE arirangnotice SET create_time=NOW(), write_user='${write_user}', not_tit='${not_tit}', not_content='${not_content}' WHERE id='${id}'`, (err)=>{
@@ -112,9 +109,13 @@ function insertSOS(write_user, not_tit, not_content, sos_img, callback) {
 
 // sos 중 id가 일치하는 데이터만 추출 (불러올때, 수정할때 필요)
 function getSOSByid(id, callback){
-  connection.query(`SELECT * FROM arirangsos WHERE id=${id}`, (err, row)=>{
+  connection.query(`SELECT * FROM arirangsos WHERE id=${id};` + `SELECT * FROM arirangsos WHERE id < ${id} ORDER BY id DESC LIMIT 1;` + `SELECT * FROM arirangsos WHERE id > ${id} ORDER BY id ASC LIMIT 1;` + `UPDATE arirangsos SET view_cnt = view_cnt + 1 WHERE id = ${id};`, (err, rows)=>{
     if(err) throw err;
-    callback(row);
+    let row_prev = rows[0];
+    let row_next = rows[1];
+    let rowid = rows[2];
+    let viewCntPlus = rows[3]
+    callback(row_prev, row_next, rowid, viewCntPlus);
   });
 };
 

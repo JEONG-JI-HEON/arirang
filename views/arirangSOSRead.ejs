@@ -52,8 +52,19 @@
   </div>
   <div class="board_read_more w1440">
     <ul>
+      <% if (row1){ %>
       <li>
-        <a class="left_con" href="">
+        <a class="left_con" href="/SOSRead?id=<%= row1.id %>">
+          <span class="arrow_lef"></span>
+          <span class="lbl">이전글</span>
+          <span class="subject">
+            <%= row1.sos_tit %>
+          </span>
+        </a>
+      </li>
+      <% } else { %>
+      <li>
+        <a class="left_con" href="#">
           <span class="arrow_lef"></span>
           <span class="lbl">이전글</span>
           <span class="subject">
@@ -61,15 +72,28 @@
           </span>
         </a>
       </li>
+      <% } %>
+      <% if (row2){ %>
       <li class="right_con">
-        <a href="">
+        <a href="/SOSRead?id=<%= row2.id %>">
           <span class="arrow_rig"></span>
           <span class="lbl">다음글</span>
           <span class="subject">
-            [행사]2022년 SAC on Screen 11월 프로그램 신청 안내 / 11.17.(목) 연극 &lt;인형의 집&gt;
+            <%= row2.sos_tit %>
           </span>
         </a>
       </li>
+      <% } else { %>
+      <li class="right_con">
+        <a href="#">
+          <span class="arrow_rig"></span>
+          <span class="lbl">다음글</span>
+          <span class="subject">
+            다음글이 없습니다.
+          </span>
+        </a>
+      </li>
+      <% } %>
     </ul>
   </div>
   <div class="board_read_btns w1440">
