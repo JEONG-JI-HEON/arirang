@@ -6,7 +6,7 @@
   background-color: #fff;
 }
 
-.join2_inner{
+.join2_inner {
   width: 460px;
   margin: 0 auto;
 }
@@ -30,7 +30,8 @@
 }
 
 #user_id,
-#user_phoneNum {
+#user_phoneNum,
+#sample6_postcode {
   width: 100%;
 }
 
@@ -42,7 +43,8 @@
   margin-top: 20px;
 }
 
-.phoneInput_wrap {
+.phoneInput_wrap,
+.zipCodeInput_wrap {
   width: 100%;
   display: flex;
   gap: 10px;
@@ -58,7 +60,8 @@
   cursor: pointer;
 }
 
-.idCheck {
+.idCheck,
+.zipCodeSearch {
   width: 120px;
   height: 50px;
   background-color: #111;
@@ -75,12 +78,43 @@
   margin-top: 20px;
 }
 
+.address_wrap{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 /*** 610px ***/
 @media (max-width: 610px) {
+  .join2_con {
+    padding: 70px 0;
+  }
+
   .join2_inner {
     width: 100%;
     padding: 30px 20px;
+    box-sizing: border-box;
   }
 }
 
 /*** 610px ***/
+
+
+/*** 360px ***/
+@media (max-width: 360px) {
+
+  .phoneInput_wrap,
+  .zipCodeInput_wrap {
+    gap: 0;
+    flex-direction: column;
+  }
+
+  .idCheck,
+  .zipCodeSearch,
+  .cert_btn {
+    width: 100%;
+  }
+}
+
+/*** 360px ***/

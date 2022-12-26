@@ -29,7 +29,11 @@ router.get('/join1', (req, res) => {
 
 /* 회원가입2페이지 */
 router.get('/join2', (req, res) => {
-  res.render('arirangJoin2')
+  db.userinfoData((rows)=>{
+    res.render('arirangJoin2', {
+      rows: rows
+    });
+  });
 });
 
 /* 로그인페이지 */
@@ -105,13 +109,15 @@ router.get('/noticeDelete', (req, res) => {
 /* 게시판의 상세페이지 */
 router.get('/noticeRead', (req, res) => {
   let id = req.query.id;
-  db.getNoticeByid(id, (row) => {
+  db.getNoticeByid(id, (rows, row_prev, row_next, rowid, viewCntPlus) => {
     res.render('arirangNoticeRead', {
-      row: row[0]
+      row: rows[0],
+      row1: row_prev[0],
+      row2: row_next[0],
+      viewCntPlus: viewCntPlus
     })
   });
 });
-
 
 
 /* 회원가입 내용을 테이블에 넣기 */
@@ -122,7 +128,10 @@ router.post('/joininfo', (req, res) => {
   let user_pw = param['user_pw'];
   let user_birth = param['user_birth'];
   let user_phoneNum = param['user_phoneNum'];
-  db.insertUserInfo(user_name, user_id, user_pw, user_birth, user_phoneNum, ()=>{
+  let user_email = param['user_email'];
+  let user_zipCode = param['user_zipCode'];
+  let user_address = param['user_address'];
+  db.insertUserInfo(user_name, user_id, user_pw, user_birth, user_phoneNum, user_email, user_zipCode, user_address, ()=>{
     res.redirect('/login');
   });
 })

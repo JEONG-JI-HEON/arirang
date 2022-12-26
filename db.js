@@ -40,9 +40,13 @@ function insertNotice(write_user, not_tit, not_content, noticeCheck, eventCheck,
 
 // 게시판 중 id가 일치하는 데이터만 추출 (불러올때, 수정할때 필요)
 function getNoticeByid(id, callback){
-  connection.query(`SELECT * FROM arirangnotice WHERE id=${id}`, (err, row)=>{
+  connection.query(`SELECT * FROM arirangnotice WHERE id=${id};` + `SELECT * FROM arirangnotice WHERE id < ${id} ORDER BY id DESC LIMIT 1;` + `SELECT * FROM arirangnotice WHERE id > ${id} ORDER BY id ASC LIMIT 1;` + `UPDATE arirangnotice SET view_cnt = view_cnt + 1 WHERE id = ${id};`, (err, rows)=>{
     if(err) throw err;
-    callback(row);
+    let row_prev = rows[0];
+    let row_next = rows[1];
+    let rowid = rows[2];
+    let viewCntPlus = rows[3]
+    callback(row_prev, row_next, rowid, viewCntPlus);
   });
 };
 
@@ -66,10 +70,18 @@ function deleteNoticeByid(id, callback){
 };
 
 // userinfo를 수정할때 (생성할때)
-function insertUserInfo(user_name, user_id, user_pw, user_birth, user_phoneNum, callback){
-  connection.query(`INSERT INTO arriranguserinfo(create_time, user_name, user_id, user_pw, user_birth, user_phoneNum) VALUES(NOW(), '${user_name}', '${user_id}', '${user_pw}', '${user_birth}', '${user_phoneNum}')`, (err)=>{
+function insertUserInfo(user_name, user_id, user_pw, user_birth, user_phoneNum, user_email, user_zipCode, user_address, callback){
+  connection.query(`INSERT INTO arriranguserinfo(create_time, user_name, user_id, user_pw, user_birth, user_phoneNum, user_email, user_zipCode, user_address) VALUES(NOW(), '${user_name}', '${user_id}', '${user_pw}', '${user_birth}', '${user_phoneNum}', '${user_email}', '${user_zipCode}', '${user_address}')`, (err)=>{
     if(err) throw err;
     callback();
+  });
+};
+
+// 아이디 중복체크를 하기위해
+function userinfoData(callback) {
+  connection.query('SELECT * FROM arriranguserinfo ORDER BY user_id', (err, rows, fields) => {
+    if (err) throw err;
+    callback(rows);
   });
 };
 
@@ -124,5 +136,5 @@ function deleteSOSByid(id, callback){
 
 
 module.exports = {
-  getMainPage,getNotice,insertNotice,getNoticeByid,updateNotice,deleteNoticeByid,insertUserInfo,loginCheck,getSOS,insertSOS,getSOSByid,updateSOS,deleteSOSByid
+  getMainPage,getNotice,insertNotice,getNoticeByid,updateNotice,deleteNoticeByid,insertUserInfo,loginCheck,userinfoData,getSOS,insertSOS,getSOSByid,updateSOS,deleteSOSByid
 };
