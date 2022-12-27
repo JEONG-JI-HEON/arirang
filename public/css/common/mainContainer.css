@@ -667,7 +667,7 @@ video {
   top: 30px;
   left: 0px;
   transition: height 0.3s;
-  z-index: 9998;
+  z-index: 98;
 }
 
 .select_bg.active {
