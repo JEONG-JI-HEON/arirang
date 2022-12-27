@@ -50,8 +50,8 @@
   <div class="board_read_more w1440">
     <ul>
       <% if (row1){ %>
-      <li>
-        <a class="left_con" href="/noticeRead?id=<%= row1.id %>">
+      <li class="left_con">
+        <a href="/noticeRead?id=<%= row1.id %>">
           <span class="arrow_lef"></span>
           <span class="lbl">이전글</span>
           <span class="subject">
@@ -61,11 +61,13 @@
       </li>
       <% } else { %>
       <li class="left_con">
-        <span class="arrow_lef"></span>
-        <span class="lbl">이전글</span>
-        <span class="subject">
-          이전글이 없습니다.
-        </span>
+        <a href="#" class="href_none">
+          <span class="arrow_lef"></span>
+          <span class="lbl">이전글</span>
+          <span class="subject">
+            이전글이 없습니다.
+          </span>
+        </a>
       </li>
       <% } %>
       <% if (row2){ %>
@@ -80,11 +82,13 @@
       </li>
       <% } else { %>
       <li class="right_con">
-        <span class="arrow_rig"></span>
-        <span class="lbl">다음글</span>
-        <span class="subject">
-          다음글이 없습니다.
-        </span>
+        <a href="#" class="href_none">
+          <span class="arrow_rig"></span>
+          <span class="lbl">다음글</span>
+          <span class="subject">
+            다음글이 없습니다.
+          </span>
+        </a>
       </li>
       <% } %>
     </ul>

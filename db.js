@@ -1,8 +1,8 @@
 var mysql = require('mysql');
 var connection = mysql.createConnection({
-  host: 'localhost',
+  host: 'database-1.cdgtgmckehex.ap-northeast-1.rds.amazonaws.com',
   user: 'root',
-  password: '1234',
+  password: 'wjdgjs0397',
   database: 'arirangproject',
   multipleStatements: true
 });

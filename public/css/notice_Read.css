@@ -118,6 +118,11 @@
   padding: 19px 120px 18px 10px;
 }
 
+.board_read_more .left_con .href_none,
+.board_read_more .right_con .href_none{
+  cursor: default;
+}
+
 .board_read_more li a span:first-child{
   position: absolute;
   top: 0;
@@ -173,9 +178,8 @@
   border: 1px solid #ccc;
   color: #333;
   width: 120px;
-  height: 50px;
-  box-sizing: border-box;
   padding: 15px;
+  box-sizing: border-box;
   text-align: center;
   
 }

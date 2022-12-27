@@ -53,57 +53,13 @@
           <td>삭제</td>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td class="notice">
-            <div>공지</div>
-          </td>
-          <td class="subject">
-            <p class="stitle">
-              <a href="">
-                전산시스템 작업에 따른 홈페이지 서비스 중지 안내[11월 24일 목요일 오후 21시 ~ 23시]
-              </a>
-            </p>
-          </td>
-          <td class="writer">통합 관리자</td>
-          <td class="date">2022-11-16</td>
-          <td class="cnt">6</td>
-        </tr>
-        <tr>
-          <td class="notice">
-            <div>공지</div>
-          </td>
-          <td class="subject">
-            <p class="stitle">
-              <a href="">
-                [행사]2022년 SAC on Screen 11월 프로그램 신청 안내 / 11.17.(목) 연극 &lt;인형의 집&gt;
-              </a>
-            </p>
-          </td>
-          <td class="writer">관리자</td>
-          <td class="date">2022-11-04</td>
-          <td class="cnt">631</td>
-        </tr>
-        <tr>
-          <td class="notice">
-            <div>공지</div>
-          </td>
-          <td class="subject">
-            <p class="stitle">
-              <a href="">
-                [이벤트] &lt;낮에는 덥고 밤에는 춥고&gt; 개봉 이벤트 안내
-              </a>
-            </p>
-          </td>
-          <td class="writer">관리자</td>
-          <td class="date">2022-10-27</td>
-          <td class="cnt">990</td>
-        </tr>
+      <tbody class="noticeCheck_wrap">
         <% rows.forEach((row, index, array)=>{ %>
         <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
+        <% if (row.noticeCheck == 'on') { %>
         <tr>
-          <td class="num">
-            <%= rows.length - index %>
+          <td class="notice">
+            <div>공지</div>
           </td>
           <td class="subject">
             <p class="stitle">
@@ -124,6 +80,41 @@
           <td><input type="button" value="수정" onclick="javascript:location.href='/noticeUpdate?id=<%= row.id %>'"></td>
           <td><input type="button" value="삭제" onclick="javascript:location.href='/noticeDelete?id=<%= row.id %>'"></td>
         </tr>
+        <% } %>
+        <% }); %>
+      </tbody>
+      <tbody>
+        <% let arrayL = [] %>
+        <% rows.forEach((row, index, array)=>{ %>
+        <% let rowsL = [] %>
+        <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
+        <% if (row.noticeCheck == 'undefined') { %>
+        <tr>
+          <td class="num">
+            <% arrayL.push(array[0]); %>
+            <% rowsL.push(rows[0]); %>
+            <%= (rowsL.length + arrayL.length) - 1 %>
+          </td>
+          <td class="subject">
+            <p class="stitle">
+              <a href="/noticeRead?id=<%= row.id %>">
+                <%= row.not_tit %>
+              </a>
+            </p>
+          </td>
+          <td class="writer">
+            <%= row.write_user %>
+          </td>
+          <td class="date">
+            <%= toYear %>-<%= toMonth %>-<%= toDate %>
+          </td>
+          <td class="cnt">
+            <%= row.view_cnt %>
+          </td>
+          <td><input type="button" value="수정" onclick="javascript:location.href='/noticeUpdate?id=<%= row.id %>'"></td>
+          <td><input type="button" value="삭제" onclick="javascript:location.href='/noticeDelete?id=<%= row.id %>'"></td>
+        </tr>
+        <% } %>
         <% }); %>
       </tbody>
     </table>
