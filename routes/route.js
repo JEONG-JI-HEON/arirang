@@ -161,7 +161,7 @@ router.post('/logininfo', (req, res) => {
 const upload = multer({
   storage: multer.diskStorage({ /* 어디의 저장할건지 정의 */
     destination(req, file, done) {
-      done(null, '../public/uploads/'); /* 터미널 기준 경로!! */
+      done(null, 'public/uploads/'); /* 터미널 기준 경로!! */
     },
     filename(req, file, done) {
       const ext = path.extname(file.originalname); /* 파일의 확장자 */
