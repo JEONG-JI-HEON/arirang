@@ -5,6 +5,7 @@ a{
 
 textarea{
   resize: none;
+  box-sizing: border-box;
 }
 
 input{

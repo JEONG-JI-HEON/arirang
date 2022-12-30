@@ -1,0 +1,135 @@
+<title>아리랑시네마센터 영화검색</title>
+<div class="sub_header">
+  <div class="inner_subHeader w1440">
+    <div class="home_btn"><a href="/"></a></div>
+    <ul class="sub_nav">
+      <li id="sub_menu">
+        <div class="sub_bg"></div>
+        <a href="">영화</a>
+        <ul class="sub_lnb">
+          <li><a href="/movieHome">영화</a></li>
+          <li><a href="">예매</a></li>
+          <li><a href="">이벤트</a></li>
+          <li><a href="">프로그램</a></li>
+          <li><a href="/noticeUser">고객센터</a></li>
+        </ul>
+      </li>
+      <li id="sub_menu">
+        <div class="sub_bg"></div>
+        <a href="">영화검색</a>
+        <ul class="sub_lnb">
+          <li><a href="/movieHome">홈</a></li>
+          <li><a href="/movieS">영화검색</a></li>
+          <li><a href="">현재상영작</a></li>
+          <li><a href="">상영예정작</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<section class="sub_sec">
+  <h2>영화검색</h2>
+  <div class="title_wrap1 w1440">
+    <% if(!movie_search) { %>
+    <div></div>
+    <% } else { %>
+    <div>
+      <div>'<%= movie_search %>'에 대한 검색결과</div>
+      <div>총 <%= movieData_length %>건</div>
+    </div>
+    <% } %>
+    <form class="search_con" method="get" action="/movieS">
+      <input class="search_box2" name="movie_search" type="text" placeholder="영화제목을 입력하세요.">
+      <input type="submit" id="search_btn" value=""></input>
+    </form>
+  </div>
+  <div class="boardList_wrap w1440">
+    <table class="boardList_table">
+      <% if(!movie_search) { %>
+      <thead>
+        <tr>
+          <td>검색어를 입력하세요.</td>
+        </tr>
+      </thead>
+      <% } else if(movieData.length == 0){ %>
+      <thead>
+        <tr>
+          <td>검색된 결과가 없습니다.</td>
+        </tr>
+      </thead>
+      <% } else { %>
+      <thead>
+        <tr>
+          <td>이미지</td>
+          <td>제목</td>
+          <td>감독</td>
+          <td>제작년도</td>
+          <td>평점</td>
+        </tr>
+      </thead>
+      <% for(i = 0; i < movieData.length; i++){ %>
+      <tbody class="movieSearch_wrap">
+        <tr>
+          <td>
+            <% if(!movieData[i].image) { %>
+            이미지 준비중입니다.
+            <% } else { %>
+            <img src="<%= movieData[i].image %>" alt="">
+            <% }; %>
+          </td>
+          <td>
+            <a class="movieData_title" href="<%= movieData[i].link %>"><%= movieData[i].title %></a>
+          </td>
+          <td>
+            <div class="movieData_director"><%= movieData[i].director %></div>
+          </td>
+          <td>
+            <%= movieData[i].pubDate %>
+          </td>
+          <td>
+            <%= movieData[i].userRating %>
+          </td>
+        </tr>
+      </tbody>
+      <% }; %>
+      <% }; %>
+    </table>
+    <div class="boardList_bot">
+      <div class="pageList">
+        <span class="first_page"></span>
+        <strong>
+          <span>1</span>
+        </strong>
+        <a href="">
+          <span>2</span>
+        </a>
+        <a href="">
+          <span>3</span>
+        </a>
+        <a href="">
+          <span>4</span>
+        </a>
+        <a href="">
+          <span>5</span>
+        </a>
+        <a href="">
+          <span>6</span>
+        </a>
+        <a href="">
+          <span>7</span>
+        </a>
+        <a href="">
+          <span>8</span>
+        </a>
+        <a href="">
+          <span>9</span>
+        </a>
+        <a href="">
+          <span>10</span>
+        </a>
+        <span class="last_page"></span>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="js/movieSearch.js"></script>

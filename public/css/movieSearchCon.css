@@ -1,0 +1,23 @@
+.title_wrap1 {
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.search_box2{
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+.movieSearch_wrap img{
+  display: block;
+  width: 55px;
+  height: 79px;
+  margin: 0 auto;
+}

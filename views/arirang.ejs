@@ -12,14 +12,16 @@
 <section class="sec_sec">
   <div class="search_wrap w1440">
     <div class="search_title">
-      <h2>영상 속 영화가 <span class="f_red">궁금</span>하다면?</h2>
-      <p>Movie Search</p>
+      <a href="/movieS?movie_search=자백">
+        <h2>위 영화가 <span class="f_red">궁금</span>하다면?</h2>
+        <p>Movie Search</p>
+      </a>
     </div>
-    <div class="search_con">
-      <input class="search_box" type="text" placeholder="자백을 검색하세요.">
-      <div class="search_icon"><a href="#"></a></div>
-    </div>
-    <div class="adv_img"></div>
+    <form class="search_con" method="get" action="/movieS">
+      <input class="search_box" name="movie_search" type="text" placeholder="자백을 검색하세요.">
+      <input type="submit" class="search_icon" value=""></input>
+    </form>
+    <div class="adv_img"><a href="https://movie.naver.com/movie/bi/mi/basic.naver?code=191430"></a></div>
   </div>
 </section>
 <!-- 박스 오피스 순위 -->

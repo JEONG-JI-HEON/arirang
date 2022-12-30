@@ -96,8 +96,10 @@ textarea{
 @media (max-width: 610px){
   .join1_con{
     width: 100%;
-    padding: 0px 20px;
+    padding: 20px;
   }
+
+
 }
 
 /*** 610px ***/

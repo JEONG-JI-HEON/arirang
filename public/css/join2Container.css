@@ -88,13 +88,27 @@
 /*** 610px ***/
 @media (max-width: 610px) {
   .join2_con {
-    padding: 70px 0;
+    padding: 0;
   }
 
   .join2_inner {
     width: 100%;
     padding: 30px 20px;
     box-sizing: border-box;
+  }
+
+  .join2_inner>div{
+    padding-top: 20px;
+  }
+
+  .join2_inner input{
+    padding: 10px 15px;
+  }
+
+  .idCheck,
+  .zipCodeSearch,
+  .cert_btn {
+    height: 43px;
   }
 }
 
