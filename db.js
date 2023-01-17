@@ -106,7 +106,7 @@ function insertUserInfo(
   callback
 ) {
   connection.query(
-    `INSERT INTO arriranguserinfo(create_time, user_name, user_id, user_pw, user_birth, user_phoneNum, user_email, user_zipCode, user_address) VALUES(NOW(), '${user_name}', '${user_id}', '${user_pw}', '${user_birth}', '${user_phoneNum}', '${user_email}', '${user_zipCode}', '${user_address}')`,
+    `INSERT INTO ariranguserinfo(create_time, user_name, user_id, user_pw, user_birth, user_phoneNum, user_email, user_zipCode, user_address) VALUES(NOW(), '${user_name}', '${user_id}', '${user_pw}', '${user_birth}', '${user_phoneNum}', '${user_email}', '${user_zipCode}', '${user_address}')`,
     (err) => {
       if (err) throw err;
       callback();
@@ -117,7 +117,7 @@ function insertUserInfo(
 // 아이디 중복체크를 하기위해
 function userinfoData(callback) {
   connection.query(
-    "SELECT * FROM arriranguserinfo ORDER BY user_id",
+    "SELECT * FROM ariranguserinfo ORDER BY user_id",
     (err, rows, fields) => {
       if (err) throw err;
       callback(rows);
@@ -128,7 +128,7 @@ function userinfoData(callback) {
 // 로그인정보와 테이블 정보를 비교하는 함수
 function loginCheck(login_id, login_pw, callback) {
   connection.query(
-    `SELECT * FROM arriranguserinfo WHERE user_id='${login_id}' and user_pw='${login_pw}'`,
+    `SELECT * FROM ariranguserinfo WHERE user_id='${login_id}' and user_pw='${login_pw}'`,
     (err, results) => {
       if (err) throw err;
       callback(results);
