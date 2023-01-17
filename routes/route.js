@@ -14,7 +14,9 @@ const FileStore = require("session-file-store")(session); // 세션을 파일에
 var client_id = "E9ZrseVlXRY4WQz13pEI";
 var client_secret = "6Qnrg_ckLt";
 var state = "RAMDOM_STATE";
-var redirectURI = encodeURI("http://localhost:3000/callback");
+var redirectURI = encodeURI(
+  "http://arirang-env.eba-6msdgjyc.ap-northeast-2.elasticbeanstalk.com/callback"
+);
 var api_url = "";
 
 /* 영화 검색 페이지(네이버 API연동) */
