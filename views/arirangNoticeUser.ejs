@@ -1,4 +1,4 @@
-<title>아리랑시네마센터 공지사항</title>
+<title>아리랑시네센터 공지사항</title>
 <div class="sub_header">
   <div class="inner_subHeader w1440">
     <div class="home_btn"><a href="/"></a></div>
@@ -36,7 +36,12 @@
         <option value="">내용</option>
         <option value="">작성자</option>
       </select>
-      <input id="notice_search" type="text" value="" placeholder="검색어를 입력하세요.">
+      <input
+        id="notice_search"
+        type="text"
+        value=""
+        placeholder="검색어를 입력하세요."
+      />
       <button id="search_btn" type="submit"></button>
     </form>
   </div>
@@ -54,68 +59,78 @@
         </tr>
       </thead>
       <tbody class="noticeCheck_wrap">
-        <% rows.forEach((row, index, array)=>{ %>
-        <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
-        <% if (row.noticeCheck == 'on') { %>
+        <% rows.forEach((row, index, array)=>{ %> <% let time = row.create_time;
+        let toYear = time.getFullYear(); let toDate = time.getDate(); let
+        toMonth = time.getMonth() + 1; %> <% if (row.noticeCheck == 'on') { %>
         <tr>
           <td class="notice">
             <div>공지</div>
           </td>
           <td class="subject">
             <p class="stitle">
-              <a href="/noticeRead?id=<%= row.id %>">
-                <%= row.not_tit %>
-              </a>
+              <a href="/noticeRead?id=<%= row.id %>"> <%= row.not_tit %> </a>
             </p>
           </td>
-          <td class="writer">
-            <%= row.write_user %>
-          </td>
+          <td class="writer"><%= row.write_user %></td>
           <td class="date">
-            <%= toYear %>-<%= toMonth %>-<%= toDate %>
+            <%= toYear %>-<%= String(toMonth).padStart(2, '0') %>-<%=
+            String(toDate).padStart(2, '0') %>
           </td>
-          <td class="cnt">
-            <%= row.view_cnt %>
+          <td class="cnt"><%= row.view_cnt %></td>
+          <td>
+            <input
+              type="button"
+              value="수정"
+              onclick="javascript:location.href='/noticeUpdate?id=<%= row.id %>'"
+            />
           </td>
-          <td><input type="button" value="수정" onclick="javascript:location.href='/noticeUpdate?id=<%= row.id %>'"></td>
-          <td><input type="button" value="삭제" onclick="javascript:location.href='/noticeDelete?id=<%= row.id %>'"></td>
+          <td>
+            <input
+              type="button"
+              value="삭제"
+              onclick="javascript:location.href='/noticeDelete?id=<%= row.id %>'"
+            />
+          </td>
         </tr>
-        <% } %>
-        <% }); %>
+        <% } %> <% }); %>
       </tbody>
       <tbody>
-        <% let arrayL = [] %>
-        <% rows.forEach((row, index, array)=>{ %>
-        <% let rowsL = [] %>
-        <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
-        <% if (row.noticeCheck == 'undefined') { %>
+        <% let arrayL = [] %> <% rows.forEach((row, index, array)=>{ %> <% let
+        rowsL = [] %> <% let time = row.create_time; let toYear =
+        time.getFullYear(); let toDate = time.getDate(); let toMonth =
+        time.getMonth() + 1; %> <% if (row.noticeCheck == 'undefined') { %>
         <tr>
           <td class="num">
-            <% arrayL.push(array[0]); %>
-            <% rowsL.push(rows[0]); %>
-            <%= (rowsL.length + arrayL.length) - 1 %>
+            <% arrayL.push(array[0]); %> <% rowsL.push(rows[0]); %> <%=
+            (rowsL.length + arrayL.length) - 1 %>
           </td>
           <td class="subject">
             <p class="stitle">
-              <a href="/noticeRead?id=<%= row.id %>">
-                <%= row.not_tit %>
-              </a>
+              <a href="/noticeRead?id=<%= row.id %>"> <%= row.not_tit %> </a>
             </p>
           </td>
-          <td class="writer">
-            <%= row.write_user %>
-          </td>
+          <td class="writer"><%= row.write_user %></td>
           <td class="date">
-            <%= toYear %>-<%= toMonth %>-<%= toDate %>
+            <%= toYear %>-<%= String(toMonth).padStart(2, '0') %>-<%=
+            String(toDate).padStart(2, '0') %>
           </td>
-          <td class="cnt">
-            <%= row.view_cnt %>
+          <td class="cnt"><%= row.view_cnt %></td>
+          <td>
+            <input
+              type="button"
+              value="수정"
+              onclick="javascript:location.href='/noticeUpdate?id=<%= row.id %>'"
+            />
           </td>
-          <td><input type="button" value="수정" onclick="javascript:location.href='/noticeUpdate?id=<%= row.id %>'"></td>
-          <td><input type="button" value="삭제" onclick="javascript:location.href='/noticeDelete?id=<%= row.id %>'"></td>
+          <td>
+            <input
+              type="button"
+              value="삭제"
+              onclick="javascript:location.href='/noticeDelete?id=<%= row.id %>'"
+            />
+          </td>
         </tr>
-        <% } %>
-        <% }); %>
+        <% } %> <% }); %>
       </tbody>
     </table>
     <div class="boardList_bot">

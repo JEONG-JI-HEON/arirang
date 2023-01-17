@@ -13,7 +13,7 @@
   justify-content: space-between;
 }
 
-.login_inner>div>h3 {
+.login_inner > div > h3 {
   text-align: center;
   line-height: 50px;
   border-bottom: 1px solid;
@@ -34,6 +34,7 @@ form.login {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 20px;
   flex-shrink: 1;
 }
@@ -46,10 +47,10 @@ form.login {
 
 .login input {
   width: 100%;
-  padding: 15px 30px;
+  padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
-  color: #A6B8C4;
+  color: #a6b8c4;
   border-radius: 4px;
   margin-top: 20px;
 }
@@ -58,7 +59,7 @@ form.login {
   margin-top: 0;
 }
 
-.login>.login_btn {
+.login > .login_btn {
   width: 120px;
   height: 120px;
   margin-top: 0;
@@ -77,38 +78,37 @@ form.login {
   position: relative;
 }
 
-
-input[id="id_check"]:checked+label {
-  background-image: url('../img/checkboxAfter.png');
+input[id="id_check"]:checked + label {
+  background-image: url("../img/checkboxAfter.png");
 }
 
 .login_menu {
   display: inline-block;
 }
 
-.login_menu>a::after {
-  content: '';
+.login_menu > a::after {
+  content: "";
   position: absolute;
   left: -11px;
   top: 50%;
   margin-top: -5px;
   width: 1px;
   height: 10px;
-  background: #A6B8C4;
+  background: #a6b8c4;
 }
 
-.login_menu>a:first-child::after {
+.login_menu > a:first-child::after {
   display: none;
 }
 
-.login_menu>a {
+.login_menu > a {
   font-size: 12px;
   color: #000;
   margin-left: 20px;
   position: relative;
 }
 
-.login_menu>a:first-child {
+.login_menu > a:first-child {
   margin-left: 0;
 }
 
@@ -134,25 +134,25 @@ input[id="id_check"]:checked+label {
 
 .non input {
   width: 70%;
-  padding: 15px 30px;
+  padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
-  color: #A6B8C4;
+  color: #a6b8c4;
   border-radius: 4px;
 }
 
-.non>div {
+.non > div {
   width: 90%;
   display: flex;
   justify-content: right;
   flex-shrink: 1;
 }
 
-.non>div:first-child {
+.non > div:first-child {
   margin-top: 0;
 }
 
-.non>.non_btn {
+.non > .non_btn {
   width: 120px;
   background-color: #111;
   color: #fff;
@@ -185,12 +185,11 @@ input[id="id_check"]:checked+label {
     padding-right: 0px;
   }
 
-
   .login_bot {
     padding-right: 0;
   }
 
-  .non>div {
+  .non > div {
     width: 100%;
     justify-content: space-between;
   }
@@ -207,23 +206,21 @@ input[id="id_check"]:checked+label {
 
 /*** 1199px ***/
 
-
-
 /*** 599px ***/
 @media (max-width: 599px) {
-  .login_box{
+  .login_box {
     padding: 60px 20px 70px 20px;
   }
-  form.login{
+  form.login {
     gap: 10px;
   }
-  .login input{
+  .login input {
     padding: 10px 15px;
     margin-top: 10px;
     font-size: 10px;
   }
 
-  .login>.login_btn{
+  .login > .login_btn {
     width: 80px;
     height: 80px;
   }
@@ -235,25 +232,25 @@ input[id="id_check"]:checked+label {
     margin-top: 10px;
   }
 
-  .non{
+  .non {
     gap: 10px;
   }
-  .non>div{
+  .non > div {
     flex-direction: column;
   }
-  
-  .non input{
+
+  .non input {
     width: 100%;
     padding: 10px 15px;
   }
-  
-  .non label{
+
+  .non label {
     width: 100%;
     font-size: 12px;
     margin-right: 0;
   }
 
-  .non>.non_btn{
+  .non > .non_btn {
     width: 100px;
     font-size: 10px;
   }

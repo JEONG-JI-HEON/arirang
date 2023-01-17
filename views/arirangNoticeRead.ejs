@@ -1,4 +1,4 @@
-<title>아리랑시네마센터 공지사항</title>
+<title>아리랑시네센터 공지사항</title>
 <div class="sub_header">
   <div class="inner_subHeader w1440">
     <div class="home_btn"><a href="/"></a></div>
@@ -35,16 +35,16 @@
       <div class="writer_info">
         <span class="writer_name"><%= row.write_user %></span>
         <span class="write_time">
-          <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
-          <%= toYear %>-<%= toMonth %>-<%= toDate %>
+          <% let time = row.create_time; let toYear = time.getFullYear(); let
+          toDate = time.getDate(); let toMonth = time.getMonth() + 1; %> <%=
+          toYear %>-<%= String(toMonth).padStart(2, '0') %>-<%=
+          String(toDate).padStart(2, '0') %>
         </span>
         <span class="view_num"><em>조회수 : </em><%= row.view_cnt %></span>
       </div>
     </div>
     <div class="board_read_con">
-      <p>
-        <%= row.not_content %>
-      </p>
+      <p><%= row.not_content %></p>
     </div>
   </div>
   <div class="board_read_more w1440">
@@ -54,9 +54,7 @@
         <a href="/noticeRead?id=<%= row1.id %>">
           <span class="arrow_lef"></span>
           <span class="lbl">이전글</span>
-          <span class="subject">
-            <%= row1.not_tit %>
-          </span>
+          <span class="subject"> <%= row1.not_tit %> </span>
         </a>
       </li>
       <% } else { %>
@@ -64,20 +62,15 @@
         <a href="#" class="href_none">
           <span class="arrow_lef"></span>
           <span class="lbl">이전글</span>
-          <span class="subject">
-            이전글이 없습니다.
-          </span>
+          <span class="subject"> 이전글이 없습니다. </span>
         </a>
       </li>
-      <% } %>
-      <% if (row2){ %>
+      <% } %> <% if (row2){ %>
       <li class="right_con">
         <a href="/noticeRead?id=<%= row2.id %>">
           <span class="arrow_rig"></span>
           <span class="lbl">다음글</span>
-          <span class="subject">
-            <%= row2.not_tit %>
-          </span>
+          <span class="subject"> <%= row2.not_tit %> </span>
         </a>
       </li>
       <% } else { %>
@@ -85,9 +78,7 @@
         <a href="#" class="href_none">
           <span class="arrow_rig"></span>
           <span class="lbl">다음글</span>
-          <span class="subject">
-            다음글이 없습니다.
-          </span>
+          <span class="subject"> 다음글이 없습니다. </span>
         </a>
       </li>
       <% } %>

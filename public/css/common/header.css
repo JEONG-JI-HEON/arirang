@@ -18,7 +18,7 @@ header {
   background-position: center center;
 }
 
-.logo>a {
+.logo > a {
   display: block;
   width: 100%;
   height: 100%;
@@ -73,7 +73,7 @@ header {
   position: absolute;
   left: 0;
   bottom: 18px;
-  background-color: #A6B8C4;
+  background-color: #a6b8c4;
   width: 0;
   height: 3px;
   transition: all 0.5s ease;
@@ -98,12 +98,12 @@ header {
   opacity: 0;
 }
 
-.lnb>li {
+.lnb > li {
   width: 100%;
   margin: 0;
 }
 
-.lnb>li>a {
+.lnb > li > a {
   display: block;
   width: 100%;
   color: #fff;
@@ -129,13 +129,13 @@ header {
   gap: 10px;
 }
 
-.h_icon>div>span>a {
+.h_icon > div > span > a {
   display: block;
   width: 40px;
   height: 40px;
 }
 
-.h_icon_top>span>a {
+.h_icon_top > span > a {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 100% 100%;
@@ -163,12 +163,12 @@ header {
   line-height: 40px;
 }
 
-.h_icon_bot>span {
+.h_icon_bot > span {
   display: flex;
   align-items: center;
 }
 
-.h_icon_bot>span>a {
+.h_icon_bot > span > a {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 75% auto;
@@ -197,7 +197,7 @@ header {
   z-index: 100;
 }
 
-.mobile-top-bar>.logo {
+.mobile-top-bar > .logo {
   text-align: center;
   color: white;
   font-weight: bold;
@@ -217,7 +217,7 @@ header {
   z-index: 100;
 }
 
-.ico>div {
+.ico > div {
   position: absolute;
   z-index: 100;
   top: 0;
@@ -227,38 +227,38 @@ header {
   background-color: white;
 }
 
-.ico>div:nth-child(2) {
+.ico > div:nth-child(2) {
   top: 40%;
-  transition: visibility 0s .15s;
+  transition: visibility 0s 0.15s;
 }
 
-.ico.active>div:nth-child(2) {
+.ico.active > div:nth-child(2) {
   visibility: hidden;
   transition: visibility 0s;
 }
 
-.ico>div:nth-child(3) {
+.ico > div:nth-child(3) {
   top: 80%;
 }
 
-.ico>div:nth-child(1),
-.ico>div:nth-child(3) {
-  transition: top .15s .15s, transform .15s;
+.ico > div:nth-child(1),
+.ico > div:nth-child(3) {
+  transition: top 0.15s 0.15s, transform 0.15s;
 }
 
-.ico.active>div:nth-child(1),
-.ico.active>div:nth-child(3) {
+.ico.active > div:nth-child(1),
+.ico.active > div:nth-child(3) {
   top: 40%;
   transform: rotate(45deg);
-  transition: top .15s, transform .15s .15s;
+  transition: top 0.15s, transform 0.15s 0.15s;
 }
 
-.ico.active>div:nth-child(3) {
+.ico.active > div:nth-child(3) {
   transform: rotate(-45deg);
 }
 
 /* 아이콘 색 변화 */
-.ico[data-ico-now-animating="Y"]>div {
+.ico[data-ico-now-animating="Y"] > div {
   background-color: red;
 }
 
@@ -276,7 +276,7 @@ header {
   height: 100%;
   background-color: rgba(0, 0, 0, 0);
   visibility: hidden;
-  transition: visibility .5s, background-color .5s;
+  transition: visibility 0.5s, background-color 0.5s;
 }
 
 .right-side-bar-box.active {
@@ -291,12 +291,12 @@ header {
   right: -250px;
   width: 250px;
   height: 100%;
-  background-color: #A6B8C4;
-  transition: right .5s;
+  background-color: #a6b8c4;
+  transition: right 0.5s;
   z-index: 99;
 }
 
-.s_icon{
+.s_icon {
   width: 100%;
   height: 60px;
   display: flex;
@@ -305,13 +305,13 @@ header {
   padding-left: 20px;
 }
 
-.s_icon>span{
+.s_icon > span {
   display: block;
   width: 30px;
   height: 30px;
 }
 
-.s_icon>span>a{
+.s_icon > span > a {
   display: block;
   width: 100%;
   height: 100%;
@@ -320,48 +320,46 @@ header {
   background-repeat: no-repeat;
 }
 
-.right-side-bar-box.active>.right-side-bar {
+.right-side-bar-box.active > .right-side-bar {
   right: 0;
 }
 
-.right-side-bar>.menu-1 ul>li>a {
+.right-side-bar > .menu-1 ul > li > a {
   display: block;
   padding: 10px 5px;
   box-sizing: border-box;
   border-bottom: 1px solid #dfdfdf;
 }
 
-.right-side-bar>.menu-1 ul>li:hover>a {
+.right-side-bar > .menu-1 ul > li:hover > a {
   color: red;
 }
 
 /* 혼자가 아닌 a 에 +를 붙혀준다 */
-.right-side-bar>.menu-1 ul>li>a:not(:only-child)::after {
+.right-side-bar > .menu-1 ul > li > a:not(:only-child)::after {
   content: "+";
   float: right;
 }
 
 /* 엑티브가 있는 메뉴(펼쳐진 메뉴)에 a에 - 를 붙혀준다 */
-.right-side-bar>.menu-1 ul>li.active>a:not(:only-child)::after {
+.right-side-bar > .menu-1 ul > li.active > a:not(:only-child)::after {
   content: "-";
 }
 
-.right-side-bar>.menu-1>ul ul {
+.right-side-bar > .menu-1 > ul ul {
   display: none;
   background-color: #fff;
 }
 
-.right-side-bar>.menu-1>ul ul ul {
+.right-side-bar > .menu-1 > ul ul ul {
   background-color: #dfdfdf;
 }
 
-.right-side-bar>.menu-1 ul>li.active>ul {
+.right-side-bar > .menu-1 ul > li.active > ul {
   display: block;
 }
 
-
 /* media */
-
 
 /*** 1199px ***/
 @media (max-width: 1199px) {
@@ -377,7 +375,7 @@ header {
     font-size: 18px;
   }
 
-  .h_icon>div>span>a {
+  .h_icon > div > span > a {
     display: block;
     width: 30px;
     height: 30px;
@@ -402,7 +400,7 @@ header {
     z-index: 999;
   }
 
-  main{
+  main {
     padding-top: 69px;
   }
 
@@ -419,7 +417,7 @@ header {
     background-image: url(../../img/logo_m.png);
   }
 
-  .ico{
+  .ico {
     display: block;
   }
 

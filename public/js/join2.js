@@ -1,19 +1,25 @@
-let idCheck = document.querySelector('#idCheck');
-let accountCheck = document.querySelector('#accountCheck');
+let idCheck = document.querySelector("#idCheck");
+let accountCheck = document.querySelector("#accountCheck");
 
 function checkAll() {
   // id 체크 함수 호출
   if (!checkId(joinform.user_id.value)) {
-    idCheck.value = '0';
+    idCheck.value = "0";
     return false;
   }
   // id 중복 체크 여부
-  else if (idCheck.value == '0') {
-    alert('아이디 중복확인을 해주세요.')
+  else if (idCheck.value == "0") {
+    alert("아이디 중복확인을 해주세요.");
     return false;
   }
   // pw 체크 함수 호출
-  else if (!checkPw(joinform.user_id.value, joinform.user_pw.value, joinform.user_pwCheck.value)) {
+  else if (
+    !checkPw(
+      joinform.user_id.value,
+      joinform.user_pw.value,
+      joinform.user_pwCheck.value
+    )
+  ) {
     return false;
   }
   // 이름 체크 함수 호출
@@ -29,15 +35,15 @@ function checkAll() {
     return false;
   }
   // 우편번호 체크 함수 호출
-  else if (!checkNull(joinform.zipCode.value, '우편번호를')) {
+  else if (!checkNull(joinform.zipCode.value, "우편번호를")) {
     return false;
   }
   // 기본주소 체크 함수 호출
-  else if (!checkNull(joinform.user_address.value, '기본주소를')) {
+  else if (!checkNull(joinform.user_address.value, "기본주소를")) {
     return false;
   }
   // 상세주소 체크 함수 호출
-  else if (!checkNull(joinform.user_addressMore.value, '상세주소를')) {
+  else if (!checkNull(joinform.user_addressMore.value, "상세주소를")) {
     return false;
   }
   // 휴대전화 체크 함수 호출
@@ -58,14 +64,14 @@ function checkNull(value, data) {
   return true;
 }
 
-
 // 생년월일 체크 함수
 function checkbirth(birth) {
   // 공백 체크 함수 호출
   if (!checkNull(birth, "생년월일을")) return false;
 
   // 정규표현식 사용
-  var birthRegExp = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
+  var birthRegExp =
+    /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
   // 생년월일 유효성 검사
   if (!birthRegExp.test(birth)) {
     alert("잘못된 생년월일입니다. 다시 입력해 주십시오.");
@@ -77,7 +83,7 @@ function checkbirth(birth) {
 // id 체크 함수
 function checkId(id) {
   // 공백 체크 함수 호출
-  if (!checkNull(id, '아이디를')) return false;
+  if (!checkNull(id, "아이디를")) return false;
 
   // 정규표현식 사용
   var idRegExp = /^[a-zA-z0-9]{5,12}$/;
@@ -99,21 +105,20 @@ function confirmId() {
   let inputId = joinform.user_id.value;
   for (i = 0; i < arguments.length; i++) {
     if (!inputId) {
-      idCheck.value = '0';
-      alert('아이디를 입력하세요.');
+      idCheck.value = "0";
+      alert("아이디를 입력하세요.");
       return false;
     }
     if (arguments[i] == inputId) {
-      idCheck.value = '0';
-      alert('중복된 아이디 입니다.');
+      idCheck.value = "0";
+      alert("중복된 아이디 입니다.");
       return false;
     }
   }
-  idCheck.value = '1';
-  alert('사용 가능한 아이디 입니다.');
+  idCheck.value = "1";
+  alert("사용 가능한 아이디 입니다.");
   return true;
 }
-
 
 // pw 체크 함수
 function checkPw(id, pw, pw2) {
@@ -157,7 +162,6 @@ function checkPw(id, pw, pw2) {
   }
   return true;
 }
-
 
 // 이름 체크 함수
 function checkName(name) {
@@ -219,7 +223,7 @@ function checkMail(mail) {
 /* 하이폰 자동으로 들어가기(휴대폰 입력시) */
 const autoHyphen = (target) => {
   target.value = target.value
-    .replace(/[^0-9]/g, '')
+    .replace(/[^0-9]/g, "")
     .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3")
     .replace(/(\-{1,2})$/g, "");
-}
+};

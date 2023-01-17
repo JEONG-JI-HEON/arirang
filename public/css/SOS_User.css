@@ -1,17 +1,16 @@
-.sub_sec>.SOS_tit{
+.sub_sec > .SOS_tit {
   width: auto;
   display: block;
   text-align: center;
 }
 
-.num img{
+.num img {
   display: block;
   width: 100px;
   height: 100px;
   margin: 0 auto;
 }
 
-
-.sos_table td{
+.sos_table td {
   vertical-align: middle;
 }

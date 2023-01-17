@@ -1,41 +1,38 @@
 <!-- express layout 설치필요 -->
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/common/reset.css">
-  <link rel="stylesheet" href="css/common/commonSetting.css">
-  <link rel="stylesheet" href="css/common/header.css">
-  <link rel="stylesheet" href="css/common/footer.css">
-  <link rel="stylesheet" href="css/common/mainContainer.css">
-  <link rel="stylesheet" href="css/common/subHeader.css">
-  <link rel="stylesheet" href="css/join1Container.css">
-  <link rel="stylesheet" href="css/join2Container.css">
-  <link rel="stylesheet" href="css/loginContainer.css">
-  <link rel="stylesheet" href="css/movieHomeCon.css">
-  <link rel="stylesheet" href="css/notice_User.css">
-  <link rel="stylesheet" href="css/notice_Read.css">
-  <link rel="stylesheet" href="css/notice_Write.css">
-  <link rel="stylesheet" href="css/SOS_User.css">
-  <link rel="stylesheet" href="css/SOS_Read.css">
-  <link rel="stylesheet" href="css/movieSearchCon.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
-</head>
-<body>
-  <div id="header">
-    <%- include('header') %>
-  </div>
-  <main>
-    <%- body %>
-  </main>
-  <div id="footer">
-    <%- include('footer') %>
-  </div>
-  <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="js/time.js"></script>
-  <script src="js/noticeNew.js"></script>
-  <script src="js/header.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/common/reset.css" />
+    <link rel="stylesheet" href="css/common/commonSetting.css" />
+    <link rel="stylesheet" href="css/common/header.css" />
+    <link rel="stylesheet" href="css/common/footer.css" />
+    <link rel="stylesheet" href="css/common/mainContainer.css" />
+    <link rel="stylesheet" href="css/common/subHeader.css" />
+    <link rel="stylesheet" href="css/join1Container.css" />
+    <link rel="stylesheet" href="css/join2Container.css" />
+    <link rel="stylesheet" href="css/loginContainer.css" />
+    <link rel="stylesheet" href="css/movieHomeCon.css" />
+    <link rel="stylesheet" href="css/notice_User.css" />
+    <link rel="stylesheet" href="css/notice_Read.css" />
+    <link rel="stylesheet" href="css/notice_Write.css" />
+    <link rel="stylesheet" href="css/SOS_User.css" />
+    <link rel="stylesheet" href="css/SOS_Read.css" />
+    <link rel="stylesheet" href="css/movieSearchCon.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <div id="header"><%- include('header') %></div>
+    <main><%- body %></main>
+    <div id="footer"><%- include('footer') %></div>
+    <script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/time.js"></script>
+    <script src="js/noticeNew.js"></script>
+    <script src="js/header.js"></script>
+  </body>
 </html>

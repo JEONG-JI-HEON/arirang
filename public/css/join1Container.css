@@ -1,4 +1,4 @@
-.join1_con{
+.join1_con {
   width: 610px;
   padding: 100px 50px;
   margin: 0 auto;
@@ -6,81 +6,80 @@
   background-color: #fff;
 }
 
-.join1_con>div{
+.join1_con > div {
   padding-top: 30px;
 }
 
-.join1_con>.join_title{
+.join1_con > .join_title {
   padding-top: 0;
 }
 
-.join_title>h3{
+.join_title > h3 {
   font-size: 24px;
   font-weight: medium;
 }
 
-.join_title>h4{
+.join_title > h4 {
   font-size: 14px;
   font-weight: medium;
   padding-bottom: 20px;
 }
 
-.join1_con label{
+.join1_con label {
   font-size: 14px;
   font-weight: medium;
 }
 
-.survice_con{
+.survice_con {
   padding-top: 50px;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   all: unset;
 }
-input[type=checkbox] + label { 
-  cursor: pointer; 
+input[type="checkbox"] + label {
+  cursor: pointer;
   padding-left: 23px;
   background-repeat: no-repeat;
-  background-image: url('../img/checkboxBefore.png');
+  background-image: url("../img/checkboxBefore.png");
   background-position: left center;
   background-size: 20px 20px;
   background-repeat: no-repeat;
 }
 
-input[id="allCheck"]:checked + label{
-  background-image: url('../img/checkboxAfter.png');
+input[id="allCheck"]:checked + label {
+  background-image: url("../img/checkboxAfter.png");
 }
 
-input[id="surviceCheck"]:checked + label{
-  background-image: url('../img/checkboxAfter.png');
+input[id="surviceCheck"]:checked + label {
+  background-image: url("../img/checkboxAfter.png");
 }
 
-input[id="privacyCheck"]:checked + label{
-  background-image: url('../img/checkboxAfter.png');
+input[id="privacyCheck"]:checked + label {
+  background-image: url("../img/checkboxAfter.png");
 }
 
-input[id="marketCheck"]:checked + label{
-  background-image: url('../img/checkboxAfter.png');
+input[id="marketCheck"]:checked + label {
+  background-image: url("../img/checkboxAfter.png");
 }
 
-input[id="gpsCheck"]:checked + label{
-  background-image: url('../img/checkboxAfter.png');
+input[id="gpsCheck"]:checked + label {
+  background-image: url("../img/checkboxAfter.png");
 }
 
-
-textarea{
+textarea {
   width: 100%;
   font-size: 10px;
   font-weight: 600;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
-.btn_wrap{
+.btn_wrap {
   padding-top: 40px;
   text-align: center;
 }
 
-.join_btn1{
+.join_btn1 {
   width: 200px;
   height: 46px;
   background-color: #111;
@@ -93,13 +92,11 @@ textarea{
 
 /*** 610px ***/
 
-@media (max-width: 610px){
-  .join1_con{
+@media (max-width: 610px) {
+  .join1_con {
     width: 100%;
     padding: 20px;
   }
-
-
 }
 
 /*** 610px ***/

@@ -5,7 +5,7 @@
   object-fit: cover;
 }
 
-.swiper-button-nextSub{
+.swiper-button-nextSub {
   width: 40px;
   height: 40px;
   background-image: url(../img/arrow_right.png);
@@ -22,7 +22,7 @@
   cursor: pointer;
 }
 
-.swiper-button-prevSub{
+.swiper-button-prevSub {
   width: 40px;
   height: 40px;
   background-image: url(../img/arrow_left.png);
@@ -39,17 +39,17 @@
   cursor: pointer;
 }
 
-.swiper>.swiper-paginationSub{
+.swiper > .swiper-paginationSub {
   width: 50px;
   text-align: center;
   position: absolute;
   bottom: 0;
   left: 50%;
-  z-index: 9999;    
+  z-index: 9999;
   --swiper-theme-color: #fff;
 }
 
-.movieR_title{
+.movieR_title {
   display: flex;
   justify-content: space-between;
   padding-top: 70px;
@@ -58,7 +58,7 @@
   font-weight: bold;
 }
 
-.more_icon{
+.more_icon {
   width: 20px;
   height: 20px;
   background-image: url(../img/plus.png);
@@ -68,25 +68,25 @@
   margin: auto 0;
 }
 
-.more_icon>a{
+.more_icon > a {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.rank_conSub{
+.rank_conSub {
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
   /* gap: 60px; */
 }
 
-.rank_conSub>li{
+.rank_conSub > li {
   width: calc((100% - 240px) / 5);
   position: relative;
 }
 
-.rank_imgSub{
+.rank_imgSub {
   padding-top: 144.16%;
   height: auto;
   border-radius: 10px;
@@ -96,48 +96,47 @@
   position: relative;
 }
 
-.r_img1Now{
+.r_img1Now {
   background-image: url(../img/movieHomeNowRank1.jpg);
 }
 
-.r_img2Now{
+.r_img2Now {
   background-image: url(../img/movieHomeNowRank2.jpg);
 }
 
-.r_img3Now{
+.r_img3Now {
   background-image: url(../img/movieHomeNowRank3.jpg);
 }
 
-.r_img4Now{
+.r_img4Now {
   background-image: url(../img/movieHomeNowRank4.jpg);
 }
 
-.r_img5Now{
+.r_img5Now {
   background-image: url(../img/movieHomeNowRank5.jpg);
 }
 
-.r_img1Exp{
+.r_img1Exp {
   background-image: url(../img/movieHomeExpRank1.jpg);
 }
 
-.r_img2Exp{
+.r_img2Exp {
   background-image: url(../img/movieHomeExpRank2.jpg);
 }
 
-.r_img3Exp{
+.r_img3Exp {
   background-image: url(../img/movieHomeExpRank3.jpg);
 }
 
-.r_img4Exp{
+.r_img4Exp {
   background-image: url(../img/movieHomeExpRank4.jpg);
 }
 
-.r_img5Exp{
+.r_img5Exp {
   background-image: url(../img/movieHomeExpRank5.jpg);
 }
 
-
-.age_infoSub{
+.age_infoSub {
   width: 30px;
   height: 30px;
   font-size: 14px;
@@ -152,30 +151,30 @@
   align-items: center;
 }
 
-.ageAll{
-  background-color: #5BC77E;
+.ageAll {
+  background-color: #5bc77e;
 }
 
-.age12{
-  background-color: #4DD6FF;
+.age12 {
+  background-color: #4dd6ff;
 }
 
-.age15{
-  background-color: #FFC134;
+.age15 {
+  background-color: #ffc134;
 }
 
-.ageOnlyAdult{
-  background-color: #ED4C6B;
+.ageOnlyAdult {
+  background-color: #ed4c6b;
 }
 
-.rank_txtSub{
+.rank_txtSub {
   width: 100%;
   text-align: center;
   position: relative;
   padding-top: 16px;
 }
 
-.r_numSub{
+.r_numSub {
   font-size: 40px;
   font-weight: bold;
   position: absolute;
@@ -183,7 +182,7 @@
   left: 5px;
 }
 
-.tit_infoSub{
+.tit_infoSub {
   display: block;
   width: 100%;
   font-weight: bold;
@@ -193,25 +192,25 @@
   /* margin: 0 auto; */
 }
 
-.sub_infoSub{
+.sub_infoSub {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.sub_infoSub>h4{
+.sub_infoSub > h4 {
   display: flex;
 }
 
-.rate_perSub{
+.rate_perSub {
   margin-left: 5px;
   padding-right: 10px;
   position: relative;
 }
 
-.rate_perSub::after{
-  content: '';
+.rate_perSub::after {
+  content: "";
   display: block;
   width: 1px;
   height: 10px;
@@ -221,14 +220,14 @@
   right: 0;
 }
 
-.remain_infoSub{
+.remain_infoSub {
   margin-left: 10px;
   padding-right: 10px;
   position: relative;
 }
 
-.remain_infoSub::after{
-  content: '';
+.remain_infoSub::after {
+  content: "";
   display: block;
   width: 1px;
   height: 10px;
@@ -238,7 +237,7 @@
   right: 0;
 }
 
-.star_infoSub{
+.star_infoSub {
   padding-left: 15px;
   padding-right: 10px;
   margin-left: 10px;
@@ -249,8 +248,8 @@
   position: relative;
 }
 
-.star_infoSub::after{
-  content: '';
+.star_infoSub::after {
+  content: "";
   display: block;
   width: 1px;
   height: 10px;
@@ -260,7 +259,7 @@
   right: 0;
 }
 
-.heartSub{
+.heartSub {
   width: 16px;
   height: 16px;
   background-image: url(../img/heart_icon.png);
@@ -269,113 +268,101 @@
   margin-left: 10px;
 }
 
-.banner_wrap{
+.banner_wrap {
   padding-top: 160px;
   padding-bottom: 60px;
 }
 
-.banner_p>a{
+.banner_p > a {
   display: block;
   width: 100%;
 }
 
-.banner_p>a>img{
+.banner_p > a > img {
   display: block;
   width: 100%;
 }
 
 /*** 1440px ***/
-@media (max-width: 1440px){
-  .rank_conSub>li{
+@media (max-width: 1440px) {
+  .rank_conSub > li {
     width: calc((100% - 150px) / 4);
   }
-  .rank_conSub>li:last-child{
+  .rank_conSub > li:last-child {
     display: none;
   }
-
 }
 /*** 1440px ***/
 
-
 /*** 1199px ***/
-@media (max-width: 1199px){
-
-  .rank_conSub>li{
+@media (max-width: 1199px) {
+  .rank_conSub > li {
     width: calc((100% - 80px) / 3);
   }
-  .rank_conSub>li:nth-child(4){
+  .rank_conSub > li:nth-child(4) {
     display: none;
   }
-
 }
 /*** 1199px ***/
 
-
-
-
 /*** 949px ***/
-@media (max-width: 949px){
-  .rank_conSub>li{
+@media (max-width: 949px) {
+  .rank_conSub > li {
     width: calc((100% - 30px) / 2);
   }
-  .rank_conSub>li:nth-child(3){
+  .rank_conSub > li:nth-child(3) {
     display: none;
   }
-
-
-
 }
-
 
 /*** 949px ***/
 
-
 /*** 768px ***/
-@media (max-width: 768px){
-  .movieR_title{
+@media (max-width: 768px) {
+  .movieR_title {
     padding-top: 50px;
     padding-bottom: 50px;
     font-size: 20px;
   }
 
-  .r_numSub{
+  .r_numSub {
     font-size: 30px;
   }
 
-  .rank_txtSub{
+  .rank_txtSub {
     padding-top: 10px;
     font-size: 12px;
   }
 
-  .banner_wrap{
+  .banner_wrap {
     padding-top: 80px;
   }
 }
 /*** 768px ***/
 
 /*** 510px ***/
-@media (max-width: 510px){
-  .r_numSub{
+@media (max-width: 510px) {
+  .r_numSub {
     font-size: 24px;
     position: static;
   }
-  .rank_txtSub{
+  .rank_txtSub {
     padding-top: 5px;
     font-size: 10px;
   }
 
-  .sub_infoSub{
+  .sub_infoSub {
     /* display: none; */
   }
 }
 /*** 510px ***/
 
-@media (max-width: 375px){
-  .rank_conSub>li{
+@media (max-width: 375px) {
+  .rank_conSub > li {
     width: 100%;
   }
 
-  .rank_conSub>li:nth-child(2){
+  .rank_conSub > li:nth-child(2) {
     display: none;
   }
 }

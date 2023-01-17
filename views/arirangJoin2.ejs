@@ -1,7 +1,13 @@
-<title>아리랑시네마센터 회원가입</title>
+<title>아리랑시네센터 회원가입</title>
 <section class="sub_sec">
   <h2>회원가입</h2>
-  <form name="joinform" class="join2_con w1440" method="post" action="/joininfo" onsubmit="return checkAll()">
+  <form
+    name="joinform"
+    class="join2_con w1440"
+    method="post"
+    action="/joininfo"
+    onsubmit="return checkAll()"
+  >
     <div class="join2_inner">
       <div class="join_tit">
         <h3>회원정보를 입력해주세요.</h3>
@@ -9,58 +15,111 @@
       <div class="id_wrap">
         <label class="">아이디</label>
         <div class="phoneInput_wrap">
-          <input type="text" name="user_id" id="user_id">
-          <% let userIdes = []; %>
-          <% rows.forEach((row, index)=>{ %>
-          <% userIdes.push(row.user_id); %>
-          <% }); %>
-          <input class="idCheck" type="button" value="아이디 중복체크"
-            onclick="confirmId(<% for(i = 0; i < userIdes.length; i++){ %> '<%= userIdes[i] %>',<% } %>)">
-          <input type="hidden" name="idCheck" id="idCheck" value="0">
+          <input type="text" name="user_id" id="user_id" />
+          <% let userIdes = []; %> <% rows.forEach((row, index)=>{ %> <%
+          userIdes.push(row.user_id); %> <% }); %>
+          <input
+            class="idCheck"
+            type="button"
+            value="아이디 중복체크"
+            onclick="confirmId(<% for(i = 0; i < userIdes.length; i++){ %> '<%= userIdes[i] %>',<% } %>)"
+          />
+          <input type="hidden" name="idCheck" id="idCheck" value="0" />
         </div>
       </div>
       <div class="pw_wrap">
         <label class="password">비밀번호</label>
-        <input type="password" name="user_pw" id="user_pw">
+        <input type="password" name="user_pw" id="user_pw" />
         <label class="passwordCheck">비밀번호 확인</label>
-        <input type="password" name="user_pwCheck" id="user_pwCheck">
+        <input type="password" name="user_pwCheck" id="user_pwCheck" />
       </div>
       <div class="name_wrap">
         <label class="">이름</label>
-        <input type="text" name="user_name" id="user_name">
+        <input type="text" name="user_name" id="user_name" />
       </div>
       <div class="birth_wrap">
         <label class="">생년월일</label>
-        <input type="text" name="user_birth" id="user_birth" placeholder="숫자만 입력, 8자리" max="8"
-          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+        <input
+          type="text"
+          name="user_birth"
+          id="user_birth"
+          placeholder="숫자만 입력, 8자리"
+          max="8"
+          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+        />
       </div>
       <div class="email_wrap">
         <label class="">이메일</label>
-        <input type="text" name="user_mail" id="user_mail" placeholder="이메일 주소">
+        <input
+          type="text"
+          name="user_mail"
+          id="user_mail"
+          placeholder="이메일 주소"
+        />
       </div>
       <div class="zipCode_wrap">
         <label class="">우편번호</label>
         <div class="zipCodeInput_wrap">
-          <input type="text" name="zipCode" id="sample6_postcode" maxlength="5"
-            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
-          <input class="zipCodeSearch" type="button" value="우편번호 찾기" onclick="sample6_execDaumPostcode()">
+          <input
+            type="text"
+            name="zipCode"
+            id="sample6_postcode"
+            maxlength="5"
+            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+          />
+          <input
+            class="zipCodeSearch"
+            type="button"
+            value="우편번호 찾기"
+            onclick="sample6_execDaumPostcode()"
+          />
         </div>
         <div class="address_wrap">
-          <input type="text" name="user_address" id="sample6_address" placeholder="기본주소 입력">
-          <input type="text" name="user_addressMore" id="sample6_detailAddress" placeholder="상세주소 입력">
-          <input type="hidden" id="sample6_extraAddress" placeholder="참고항목">
+          <input
+            type="text"
+            name="user_address"
+            id="sample6_address"
+            placeholder="기본주소 입력"
+          />
+          <input
+            type="text"
+            name="user_addressMore"
+            id="sample6_detailAddress"
+            placeholder="상세주소 입력"
+          />
+          <input
+            type="hidden"
+            id="sample6_extraAddress"
+            placeholder="참고항목"
+          />
         </div>
       </div>
       <div class="phone_wrap">
         <label class="">휴대전화</label>
         <div class="phoneInput_wrap">
-          <input type="text" name="user_phoneNum" id="user_phoneNum" placeholder="숫자만 입력" maxlength="13"
-            oninput="autoHyphen(this)" />
-          <input class="cert_btn" type="button" value="인증번호받기" onclick="javascript:alert('준비중입니다.')">
+          <input
+            type="text"
+            name="user_phoneNum"
+            id="user_phoneNum"
+            placeholder="숫자만 입력"
+            maxlength="13"
+            oninput="autoHyphen(this)"
+          />
+          <input
+            class="cert_btn"
+            type="button"
+            value="인증번호받기"
+            onclick="javascript:alert('준비중입니다.')"
+          />
         </div>
-        <input type="text" name="" id="certiCheck" placeholder="인증번호를 입력하세요.">
+        <input
+          type="text"
+          name=""
+          id="certiCheck"
+          placeholder="인증번호를 입력하세요."
+        />
       </div>
-      <input class="signUp_btn" type="submit" value="회원가입">
+      <input class="signUp_btn" type="submit" value="회원가입" />
     </div>
   </form>
 </section>

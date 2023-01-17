@@ -1,4 +1,4 @@
-.title_wrap{
+.title_wrap {
   height: 100%;
   padding: 20px;
   box-sizing: border-box;
@@ -9,7 +9,7 @@
   margin-bottom: 30px;
 }
 
-#notice_select{
+#notice_select {
   cursor: pointer;
   border: 1px solid #b5b5b5;
   border-radius: 0;
@@ -23,7 +23,7 @@
   color: #767676;
 }
 
-#notice_search{
+#notice_search {
   vertical-align: top;
   box-sizing: border-box;
   width: 300px;
@@ -34,37 +34,36 @@
   margin-left: 8px;
 }
 
-#search_btn{
+#search_btn {
   width: 50px;
   height: 50px;
-  background-color: #A6B8C4;
-  border: 1px solid #A6B8C4;
+  background-color: #a6b8c4;
+  border: 1px solid #a6b8c4;
   color: #fff;
   background-image: url(../img/searchicon.png);
   background-position: center center;
   background-repeat: no-repeat;
   vertical-align: top;
   cursor: pointer;
-  
 }
 
-.boardList_wrap{
+.boardList_wrap {
   height: auto;
-  border-top: 3px solid #4E748B;
+  border-top: 3px solid #4e748b;
 }
 
-.boardList_table{
+.boardList_table {
   width: 100%;
   /* height: 660px; */
   text-align: center;
   background-color: #fff;
 }
 
-.boardList_table a{
+.boardList_table a {
   color: #000;
 }
 
-.boardList_table td{
+.boardList_table td {
   border-bottom: 1px solid #d4d4d4;
   padding: 14px 3px;
   box-sizing: border-box;
@@ -84,20 +83,21 @@
   color: #373737;
 }
 
-.boardList_table .notice div{
-  width: 50px; height: 30px;
-  background-color: #4E748B;
+.boardList_table .notice div {
+  width: 50px;
+  height: 30px;
+  background-color: #4e748b;
   color: #fff;
   font-size: 16px;
   text-align: center;
   margin: 0 auto;
 }
 
-.boardList_table .subject{
+.boardList_table .subject {
   text-align: left;
 }
 
-.boardList_bot{
+.boardList_bot {
   padding-top: 50px;
   padding-bottom: 50px;
   text-align: center;
@@ -107,14 +107,14 @@
   position: relative;
 }
 
-.pageList{
+.pageList {
   text-align: center;
   line-height: 110%;
   box-sizing: border-box;
   font-size: 0;
 }
 
-.pageList .first_page{
+.pageList .first_page {
   cursor: pointer;
   display: inline-block;
   width: 37px;
@@ -123,15 +123,15 @@
   margin-right: 10px;
   box-sizing: border-box;
   border: 1px solid #e2e2e2;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   background-image: url(../img/prev.png);
   background-size: 70% 70%;
   background-position: center center;
   background-repeat: no-repeat;
-  background-color: #A6B8C4;
+  background-color: #a6b8c4;
 }
 
-.pageList .last_page{
+.pageList .last_page {
   cursor: pointer;
   display: inline-block;
   width: 37px;
@@ -140,15 +140,16 @@
   margin-left: 10px;
   box-sizing: border-box;
   border: 1px solid #e2e2e2;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   background-image: url(../img/next.png);
   background-size: 70% 70%;
   background-position: center center;
   background-repeat: no-repeat;
-  background-color: #A6B8C4;
+  background-color: #a6b8c4;
 }
 
-.pageList strong, .pageList a{
+.pageList strong,
+.pageList a {
   display: inline-block;
   margin: 0;
   line-height: 120%;
@@ -161,8 +162,7 @@
   font-size: 16px;
 }
 
-
-.pageList strong span{
+.pageList strong span {
   cursor: pointer;
   display: block;
   width: 37px;
@@ -170,12 +170,12 @@
   line-height: 37px;
   box-sizing: border-box;
   border: 1px solid #e2e2e2;
-  transition: all .3s ease;
-  background-color: #4E748B;
+  transition: all 0.3s ease;
+  background-color: #4e748b;
   color: #fff;
 }
 
-.pageList a span{
+.pageList a span {
   cursor: pointer;
   display: block;
   width: 37px;
@@ -184,128 +184,127 @@
   box-sizing: border-box;
   border: 1px solid #e2e2e2;
   border-left: 0;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
-.write_btn{
+.write_btn {
   width: 100px;
   height: 37px;
   background-color: #111;
   position: absolute;
-  top: 50%; right: 0;
+  top: 50%;
+  right: 0;
   transform: translateY(-50%);
 }
 
-.write_btn>a{
+.write_btn > a {
   display: block;
   width: 100%;
   line-height: 37px;
   color: #fff;
 }
 
-input[value="수정"], input[value="삭제"]{
-  background-color: #A6B8C4;
+input[value="수정"],
+input[value="삭제"] {
+  background-color: #a6b8c4;
   cursor: pointer;
   border: none;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 /*** 999px ***/
-@media (max-width: 999px){
-  .boardList_table td{
+@media (max-width: 999px) {
+  .boardList_table td {
     font-size: 16px;
   }
 }
 /*** 999px ***/
 
 /*** 750px ***/
-@media (max-width: 750px){
-  .boardList_bot{
+@media (max-width: 750px) {
+  .boardList_bot {
     padding-bottom: 80px;
-
   }
-  .write_btn{
+  .write_btn {
     top: 70%;
     left: 50%;
     transform: translateX(-50%);
   }
-
-
-
 }
 /*** 750px ***/
 
-
 /*** 699px ***/
-@media (max-width: 699px){
-  .boardList_table td, .boardList_table th{
+@media (max-width: 699px) {
+  .boardList_table td,
+  .boardList_table th {
     font-size: 12px;
     padding: 14px 0;
   }
 
-  #notice_select{
+  #notice_select {
     min-width: 100px;
   }
 
-  #notice_search{
+  #notice_search {
     width: 200px;
   }
 }
 /*** 699px ***/
 
 /*** 520px ***/
-@media (max-width: 520px){
-  .boardList_table td, .boardList_table th{
+@media (max-width: 520px) {
+  .boardList_table td,
+  .boardList_table th {
     padding: 7px 0;
   }
 
-  .title_wrap{
+  .title_wrap {
     /* height: 70px; */
   }
 
-  #notice_select{
+  #notice_select {
     min-width: 50px;
     height: 40px;
     font-size: 10px;
   }
 
-  #notice_search{
+  #notice_search {
     width: 150px;
     padding: 10px;
     height: 40px;
     font-size: 10px;
   }
 
-  #search_btn{
+  #search_btn {
     width: 40px;
     height: 40px;
   }
 
-  .pageList a:nth-child(11){
+  .pageList a:nth-child(11) {
     display: none;
   }
 }
 /*** 520px ***/
 
 /*** 490px ***/
-@media (max-width: 490px){
-  .pageList a:nth-child(10){
+@media (max-width: 490px) {
+  .pageList a:nth-child(10) {
     display: none;
   }
 }
 /*** 490px ***/
 
 /*** 460px ***/
-@media (max-width: 460px){
-  .pageList a:nth-child(9){
+@media (max-width: 460px) {
+  .pageList a:nth-child(9) {
     display: none;
   }
 }
 /*** 460px ***/
 
 /*** 430px ***/
-@media (max-width: 430px){
-  .pageList a:nth-child(8){
+@media (max-width: 430px) {
+  .pageList a:nth-child(8) {
     display: none;
   }
 }

@@ -1,4 +1,4 @@
-<title>아리랑시네마센터 프로그램</title>
+<title>아리랑시네센터 프로그램</title>
 <div class="sub_header">
   <div class="inner_subHeader w1440">
     <div class="home_btn"><a href="/"></a></div>
@@ -29,7 +29,9 @@
 </div>
 <section class="sub_sec">
   <h2 class="SOS_tit">
-    <p class="f_gray">S</p>AC <p class="f_gray">O</p>N <p class="f_gray">S</p>CREEN
+    <p class="f_gray">S</p>AC
+    <p class="f_gray">O</p>N
+    <p class="f_gray">S</p>CREEN
   </h2>
   <div class="title_wrap w1440">
     <form action="">
@@ -38,7 +40,12 @@
         <option value="">내용</option>
         <option value="">작성자</option>
       </select>
-      <input id="notice_search" type="text" value="" placeholder="검색어를 입력하세요.">
+      <input
+        id="notice_search"
+        type="text"
+        value=""
+        placeholder="검색어를 입력하세요."
+      />
       <button id="search_btn" type="submit"></button>
     </form>
   </div>
@@ -46,40 +53,48 @@
     <table class="boardList_table sos_table">
       <thead>
         <tr>
-          <th scope="col" class="num" style="width:10%">이미지</th>
-          <th scope="col" class="title" style="width:42%">제목</th>
-          <th scope="col" style="width:14%">작성자</th>
-          <th scope="col" class="date" style="width:14%">작성일자</th>
-          <th scope="col" class="view_cnt" style="width:10%">조회수</th>
-          <th scope="col" class="file" style="width:5%">수정</th>
-          <th scope="col" class="file" style="width:5%">삭제</th>
+          <th scope="col" class="num" style="width: 10%">이미지</th>
+          <th scope="col" class="title" style="width: 42%">제목</th>
+          <th scope="col" style="width: 14%">작성자</th>
+          <th scope="col" class="date" style="width: 14%">작성일자</th>
+          <th scope="col" class="view_cnt" style="width: 10%">조회수</th>
+          <th scope="col" class="file" style="width: 5%">수정</th>
+          <th scope="col" class="file" style="width: 5%">삭제</th>
         </tr>
       </thead>
       <tbody>
-        <% rows.forEach((row, index, array)=>{ %>
-        <% let time = row.create_time; let toYear = time.getFullYear(); let toDate = time.getDate(); let toMonth = time.getMonth() + 1; %>
+        <% rows.forEach((row, index, array)=>{ %> <% let time = row.create_time;
+        let toYear = time.getFullYear(); let toDate = time.getDate(); let
+        toMonth = time.getMonth() + 1; %>
         <tr>
-          <td class="num ">
-            <img src="<%= row.sos_img %>" alt="">
+          <td class="num">
+            <img src="<%= row.sos_img %>" alt="" />
           </td>
           <td class="subject">
             <p class="stitle">
-              <a href="/SOSRead?id=<%= row.id %>">
-                <%= row.sos_tit %>
-              </a>
+              <a href="/SOSRead?id=<%= row.id %>"> <%= row.sos_tit %> </a>
             </p>
           </td>
-          <td class="writer">
-            <%= row.write_user %>
-          </td>
+          <td class="writer"><%= row.write_user %></td>
           <td class="date">
-            <%= toYear %>-<%= toMonth %>-<%= toDate %>
+            <%= toYear %>-<%= String(toMonth).padStart(2, '0') %>-<%=
+            String(toDate).padStart(2, '0') %>
           </td>
-          <td class="cnt">
-            <%= row.view_cnt %>
+          <td class="cnt"><%= row.view_cnt %></td>
+          <td>
+            <input
+              type="button"
+              value="수정"
+              onclick="javascript:location.href='/SOSUpdate?id=<%= row.id %>'"
+            />
           </td>
-          <td><input type="button" value="수정" onclick="javascript:location.href='/SOSUpdate?id=<%= row.id %>'"></td>
-          <td><input type="button" value="삭제" onclick="javascript:location.href='/SOSDelete?id=<%= row.id %>'"></td>
+          <td>
+            <input
+              type="button"
+              value="삭제"
+              onclick="javascript:location.href='/SOSDelete?id=<%= row.id %>'"
+            />
+          </td>
         </tr>
         <% }); %>
       </tbody>

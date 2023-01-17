@@ -1,10 +1,10 @@
-.boardList_wrap{
+.boardList_wrap {
   /* height: 839px; */
-  border-top: 3px solid #4E748B;
+  border-top: 3px solid #4e748b;
   background-color: #fff;
 }
 
-.boardList_wrap #noticeWrite{
+.boardList_wrap #noticeWrite {
   width: 100%;
   height: 100%;
   font-size: 30px;
@@ -12,8 +12,7 @@
   box-sizing: border-box;
 }
 
-
-.boardTitle{
+.boardTitle {
   padding: 18px 40px;
   border-bottom: 1px solid #000;
   /* background-color: #fff; */
@@ -22,13 +21,13 @@
   gap: 40px;
 }
 
-.boardTitle label{
+.boardTitle label {
   position: relative;
   padding-right: 30px;
 }
 
-.boardTitle label::after{
-  content: '';
+.boardTitle label::after {
+  content: "";
   display: block;
   width: 1px;
   height: 50px;
@@ -40,33 +39,33 @@
   margin: auto;
 }
 
-.boardTitle input{
+.boardTitle input {
   width: 90%;
   height: 80px;
   font-size: 24px;
 }
 
-.boardCon{
+.boardCon {
   background-color: none;
   padding: 18px 40px;
 }
 
-.boardTopCon{
+.boardTopCon {
   padding-bottom: 18px;
   display: flex;
   /* align-items: center; */
   width: 100%;
 }
 
-.boardTopCon input[type='file']{
+.boardTopCon input[type="file"] {
   line-height: 45px;
 }
 
-.checkboxs{
+.checkboxs {
   display: flex;
 }
 
-.checkboxs .writeNotice{
+.checkboxs .writeNotice {
   width: 100%;
   min-width: 120px;
   margin-left: 30px;
@@ -77,60 +76,59 @@
   align-items: center;
 }
 
-.checkboxs .writeNotice:nth-child(2){
+.checkboxs .writeNotice:nth-child(2) {
   margin-left: 0;
 }
 
-.checkboxs .writeNotice:last-child{
+.checkboxs .writeNotice:last-child {
   margin-right: 0;
 }
 
-.boardTopCon .user_label{
+.boardTopCon .user_label {
   margin-left: 30px;
   display: flex;
   gap: 20px;
 }
 
-input[id="noticeCheck"]:checked + label{
-  background-image: url('../img/checkboxAfter.png');
+input[id="noticeCheck"]:checked + label {
+  background-image: url("../img/checkboxAfter.png");
 }
 
-input[id="eventCheck"]:checked + label{
-  background-image: url('../img/checkboxAfter.png');
+input[id="eventCheck"]:checked + label {
+  background-image: url("../img/checkboxAfter.png");
 }
 
-input[id="festivalCheck"]:checked + label{
-  background-image: url('../img/checkboxAfter.png');
+input[id="festivalCheck"]:checked + label {
+  background-image: url("../img/checkboxAfter.png");
 }
 
-.boardTopCon input[name='password']{
+.boardTopCon input[name="password"] {
   width: 156px;
   height: 46px;
   font-size: 20px;
 }
-.boardTopCon input[name='id']{
+.boardTopCon input[name="id"] {
   width: 156px;
   height: 46px;
   font-size: 20px;
 }
 
-
-.boardTopCon .user_label input{
+.boardTopCon .user_label input {
   width: 50%;
 }
 
-.boardBottomCon textarea{
+.boardBottomCon textarea {
   width: 100%;
   font-size: 20px;
 }
 
-.boardBtn{
+.boardBtn {
   padding: 0 36px 100px;
   display: flex;
   justify-content: right;
 }
 
-.boardBtn input{
+.boardBtn input {
   cursor: pointer;
   width: 120px;
   height: 50px;
@@ -139,57 +137,53 @@ input[id="festivalCheck"]:checked + label{
 }
 
 /*** 1440px ***/
-@media (max-width: 1440px){
-  .boardList_wrap #noticeWrite{
+@media (max-width: 1440px) {
+  .boardList_wrap #noticeWrite {
     font-size: 24px;
   }
 
-  .boardTitle{
+  .boardTitle {
     padding: 18px 0;
     gap: 30px;
   }
 
-  .boardTitle label{
+  .boardTitle label {
     width: 74px;
   }
 
-  .boardCon{
+  .boardCon {
     padding: 18px 0;
   }
 
-  .boardBtn{
+  .boardBtn {
     padding: 0 0 80px;
   }
 }
 /*** 1440px ***/
 
-
 /*** 1200px ***/
-@media (max-width: 1200px){
-  .boardTopCon{
+@media (max-width: 1200px) {
+  .boardTopCon {
     flex-direction: column;
   }
-  
-  .checkboxs{
+
+  .checkboxs {
     margin-bottom: 20px;
   }
 
   .boardTopCon .user_label:nth-child(2) {
     margin-left: 0px;
   }
-
 }
 /*** 1200px ***/
 
-
 /*** 579px ***/
-@media (max-width: 579px){
+@media (max-width: 579px) {
   .checkboxs .writeNotice {
     min-width: 60px;
     margin-left: 10px;
     margin-right: 30px;
     font-size: 12px;
-}
-  
+  }
 }
 /*** 579px ***/

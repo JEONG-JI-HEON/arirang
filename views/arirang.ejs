@@ -1,11 +1,25 @@
-<title>아리랑시네마센터 홈</title>
+<% if (alert == true) { %>
+  <script>alert('<%= name %>님 환영합니다')</script>
+<% } %>
+<title>아리랑시네센터 홈</title>
 <!-- 영화 영상 -->
 <section class="fir_sec">
   <div class="video_wrap w1440">
-    <video autoplay muted loop playsinline>
+    <video id="video" autoplay muted loop playsinline>
       <source src="video/jabak preview.mp4" type="video/mp4">
     </video>
     <img src="img/fir_con_m.jpg" alt="">
+    <div class="video_info">
+      <div class="video_info_txt">
+        <strong>제대로 함정에 빠졌다!</strong>
+        <p>두 개의 사건, 두 개의 시신</p>
+        <p>숨겨진 진실이 밝혀진다.</p>
+      </div>
+      <div class="video_btn_wrap">
+        <a href="https://movie.naver.com/movie/bi/mi/basic.naver?code=191430">상세보기</a>
+        <button onclick="video_btn()" class="video_stop"></button>
+      </div>
+    </div>
   </div>
 </section>
 <!-- 검색칸 -->
@@ -222,7 +236,7 @@
           <li class="isNotice">
             <a href="/noticeRead?id=<%= row.id %>">
               <span class="date f_black">
-                <%= toYear %>-<%= toMonth %>-<%= toDate %>
+                <%= toYear %>-<%= String(toMonth).padStart(2, '0') %>-<%= String(toDate).padStart(2, '0') %>
               </span>
               <span class="subject">
                 <% if (row.noticeCheck == 'on'){ %>
@@ -246,7 +260,7 @@
           <% if (row.noticeCheck == 'on'){ %>
           <li class="isNotice">
             <a href="/noticeRead?id=<%= row.id %>">
-              <span class="date f_black"><%= toYear %>-<%= toMonth %>-<%= toDate %></span>
+              <span class="date f_black"><%= toYear %>-<%= String(toMonth).padStart(2, '0') %>-<%= String(toDate).padStart(2, '0') %></span>
               <span class="subject">
                 <strong class="f_red">[공지사항]</strong>
                 <%= row.not_tit %>
@@ -262,7 +276,7 @@
           <% if (row.eventCheck == 'on'){ %>
           <li class="isNotice">
             <a href="/noticeRead?id=<%= row.id %>">
-              <span class="date f_black"><%= toYear %>-<%= toMonth %>-<%= toDate %></span>
+              <span class="date f_black"><%= toYear %>-<%= String(toMonth).padStart(2, '0') %>-<%= String(toDate).padStart(2, '0') %></span>
               <span class="subject">
                 <strong class="f_red">[이벤트]</strong>
                 <%= row.not_tit %>
@@ -278,7 +292,7 @@
           <% if (row.festivalCheck == 'on'){ %>
           <li class="isNotice">
             <a href="/noticeRead?id=<%= row.id %>">
-              <span class="date f_black"><%= toYear %>-<%= toMonth %>-<%= toDate %></span>
+              <span class="date f_black"><%= toYear %>-<%= String(toMonth).padStart(2, '0') %>-<%= String(toDate).padStart(2, '0') %></span>
               <span class="subject">
                 <strong class="f_red">[행사]</strong>
                 <%= row.not_tit %>

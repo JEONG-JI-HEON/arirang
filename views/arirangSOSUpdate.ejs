@@ -1,4 +1,4 @@
-<title>아리랑시네마센터 프로그램</title>
+<title>아리랑시네센터 프로그램</title>
 <div class="sub_header">
   <div class="inner_subHeader w1440">
     <div class="home_btn"><a href="/"></a></div>
@@ -29,30 +29,39 @@
 </div>
 <section class="sub_sec">
   <h2 class="SOS_tit">
-    <p class="f_gray">S</p>AC <p class="f_gray">O</p>N <p class="f_gray">S</p>CREEN
+    <p class="f_gray">S</p>AC
+    <p class="f_gray">O</p>N
+    <p class="f_gray">S</p>CREEN
   </h2>
   <div class="boardList_wrap w1440">
-    <form id="noticeWrite" method="post" action="/SOSUpdateInfo"  enctype="multipart/form-data">
-      <input type="hidden" name="id" value="<%= row.id %>">
+    <form
+      id="noticeWrite"
+      method="post"
+      action="/SOSUpdateInfo"
+      enctype="multipart/form-data"
+    >
+      <input type="hidden" name="id" value="<%= row.id %>" />
       <div class="boardTitle">
         <label for="">제목</label>
-        <input type="text" name="sos_tit" value="<%= row.sos_tit %>">
+        <input type="text" name="sos_tit" value="<%= row.sos_tit %>" />
       </div>
       <div class="boardCon">
         <div class="boardTopCon">
-          <input type="file" name="sos_img" value="<%= row.sos_img %>">
+          <input type="file" name="sos_img" value="<%= row.sos_img %>" />
           <label for="">ID</label>
-          <input type="text" name="write_user" value="<%= row.write_user %>">
+          <input type="text" name="write_user" value="<%= row.write_user %>" />
           <label for="">PW</label>
-          <input type="password" name="user_pw">
+          <input type="password" name="user_pw" />
         </div>
         <div class="boardBottomCon">
-          <textarea name="sos_content" id="" cols="30" rows="20"><%= row.sos_content %></textarea>
+          <textarea name="sos_content" id="" cols="30" rows="20">
+<%= row.sos_content %>
+</textarea>
         </div>
       </div>
       <div class="boardBtn">
-        <input type="submit" value="등록">
-        <input type="submit" value="취소">
+        <input type="submit" value="등록" />
+        <input type="submit" value="취소" />
       </div>
     </form>
   </div>

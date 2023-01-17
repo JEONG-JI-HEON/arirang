@@ -1,4 +1,4 @@
-<title>아리랑시네마센터 공지사항</title>
+<title>아리랑시네센터 공지사항</title>
 <div class="sub_header">
   <div class="inner_subHeader w1440">
     <div class="home_btn"><a href="/"></a></div>
@@ -33,23 +33,41 @@
     <form id="noticeWrite" method="post" action="/noticeWriteInfo">
       <div class="boardTitle">
         <label for="">제목</label>
-        <input type="text" name="not_tit">
+        <input type="text" name="not_tit" />
       </div>
       <div class="boardCon">
         <div class="boardTopCon">
           <div class="checkboxs">
-            <input type="checkbox" class="checkbox" name="noticeCheck" id="noticeCheck" onclick="NoMultiChk(this)">
+            <input
+              type="checkbox"
+              class="checkbox"
+              name="noticeCheck"
+              id="noticeCheck"
+              onclick="NoMultiChk(this)"
+            />
             <label class="writeNotice" for="noticeCheck">공지로 작성</label>
-            <input type="checkbox" class="checkbox" name="eventCheck" id="eventCheck" onclick="NoMultiChk(this)">
+            <input
+              type="checkbox"
+              class="checkbox"
+              name="eventCheck"
+              id="eventCheck"
+              onclick="NoMultiChk(this)"
+            />
             <label class="writeNotice" for="eventCheck">이벤트로 작성</label>
-            <input type="checkbox" class="checkbox" name="festivalCheck" id="festivalCheck" onclick="NoMultiChk(this)">
+            <input
+              type="checkbox"
+              class="checkbox"
+              name="festivalCheck"
+              id="festivalCheck"
+              onclick="NoMultiChk(this)"
+            />
             <label class="writeNotice" for="festivalCheck">행사로 작성</label>
           </div>
           <div class="user_label">
             <label for="">ID</label>
-            <input type="text" name="write_user">
+            <input type="text" name="write_user" />
             <label for="">PW</label>
-            <input type="password" name="user_pw">
+            <input type="password" name="user_pw" />
           </div>
         </div>
         <div class="boardBottomCon">
@@ -57,8 +75,8 @@
         </div>
       </div>
       <div class="boardBtn">
-        <input type="submit" value="등록">
-        <input type="submit" value="취소">
+        <input type="submit" value="등록" />
+        <input type="submit" value="취소" />
       </div>
     </form>
   </div>

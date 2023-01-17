@@ -54,13 +54,26 @@
     <!-- 아이콘 -->
     <div class="h_icon">
       <div class="h_icon_top">
-        <span><a href="https://www.facebook.com/arirangcinecenter" class="fb"></a></span>
-        <span><a href="https://www.instagram.com/arirang_cine/" class="in"></a></span>
+        <span
+          ><a href="https://www.facebook.com/arirangcinecenter" class="fb"></a
+        ></span>
+        <span
+          ><a href="https://www.instagram.com/arirang_cine/" class="in"></a
+        ></span>
         <span><a href="https://twitter.com/ARIRANGCMC" class="tw"></a></span>
-        <span><a href="https://www.youtube.com/channel/UCw-PP0JLJMVlVJtZnbqhQww" class="yt"></a></span>
+        <span
+          ><a
+            href="https://www.youtube.com/channel/UCw-PP0JLJMVlVJtZnbqhQww"
+            class="yt"
+          ></a
+        ></span>
       </div>
       <div class="h_icon_bot">
+        <% if(is_logined == false){ %>
         <a href="/login" class="login">로그인</a>
+        <% } else { %>
+        <a href="/logout" class="login">로그아웃</a>
+        <% }; %>
         <span><a href="/join1" class="signUp"></a></span>
         <span><a href="#" class="quickTicket"></a></span>
       </div>
@@ -77,7 +90,11 @@
     <div class="right-side-bar-box">
       <div class="right-side-bar">
         <div class="s_icon">
+          <% if(is_logined == false){ %>
           <a href="/login" class="login">로그인</a>
+          <% } else { %>
+          <a href="/logout" class="login">로그아웃</a>
+          <% }; %>
           <span><a href="/join1" class="signUp"></a></span>
         </div>
         <div class="menu-1">

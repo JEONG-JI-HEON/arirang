@@ -1,4 +1,4 @@
-<title>아리랑시네마센터 로그인</title>
+<title>아리랑시네센터 로그인</title>
 <section class="sub_sec">
   <h2>로그인</h2>
   <div class="login_wrap w1440">
@@ -8,14 +8,14 @@
           <h3>회원</h3>
           <form class="login" method="post" action="/logininfo">
             <div class="login_inputWrap">
-              <input type="text" name="login_id" placeholder="아이디">
-              <input type="password" name="login_pw" placeholder="비밀번호">
+              <input type="text" name="login_id" placeholder="아이디" />
+              <input type="password" name="login_pw" placeholder="비밀번호" />
             </div>
-            <input class="login_btn" type="submit" value="로그인">
+            <input class="login_btn" type="submit" value="로그인" />
           </form>
           <div class="login_bot">
             <div class="idSave">
-              <input type="checkbox" id="id_check" >
+              <input type="checkbox" id="id_check" />
               <label for="id_check">아이디 저장</label>
             </div>
             <div class="login_menu">
@@ -23,6 +23,7 @@
               <a href="">아이디 찾기</a>
               <a href="">비밀번호 찾기</a>
             </div>
+            <div id="naver_id_login"><a href="<%= api_url %>"><img height='50' src='http://static.nid.naver.com/oauth/small_g_in.PNG'/></a></div>
           </div>
         </div>
         <div class="non_form">
@@ -30,21 +31,21 @@
           <form class="non" action="">
             <div>
               <label for="">이름</label>
-              <input type="text">
+              <input type="text" />
             </div>
             <div>
               <label for="">휴대폰 번호</label>
-              <input type="text">
+              <input type="text" />
             </div>
             <div>
               <label for="">예매 비밀번호</label>
-              <input type="password">
+              <input type="password" />
             </div>
-            <input class="non_btn" type="submit" value="비회원 예매 확인">
+            <input class="non_btn" type="submit" value="비회원 예매 확인" />
           </form>
         </div>
       </div>
     </div>
   </div>
-  <div class="login_Adv w1440"><img src="img/adv1.jpg" alt=""></div>
+  <div class="login_Adv w1440"><img src="img/adv1.jpg" alt="" /></div>
 </section>
