@@ -31,6 +31,7 @@ router.get("/movieS", function (req, res, next) {
     headers: {
       "X-Naver-Client-Id": client_id,
       "X-Naver-Client-Secret": client_secret,
+      "Access-Control-Allow-Origin": "*",
     },
   };
 
@@ -171,10 +172,11 @@ router.get("/callback", async (req, res) => {
     headers: { Authorization: "Bearer " + token },
   };
 
-  const info_result = await requestPromise.get(info_options);
   // string 형태로 값이 담기니 JSON 형식으로 parse를 해줘야 한다.
-  const info_result_json = JSON.parse(info_result).response;
+  const info_result = await requestPromise.get(info_options);
+
   // info_result_json = 네이버 로그인 회원정보
+  const info_result_json = JSON.parse(info_result).response;
 
   request(options, function (error, response, body) {
     if (!error && response.statusCode == 200) {
