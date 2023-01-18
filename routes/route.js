@@ -31,10 +31,8 @@ router.get("/movieS", function (req, res, next) {
     headers: {
       "X-Naver-Client-Id": client_id,
       "X-Naver-Client-Secret": client_secret,
-      "Access-Control-Allow-Origin": "*",
     },
   };
-
   request(options, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       if (req.session.is_logined == true) {

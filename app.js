@@ -6,14 +6,11 @@ const cookieParser = require("cookie-parser");
 const routers = require("./routes/route");
 const app = express();
 const path = require("path");
-const cors = require("cors");
 const session = require("express-session");
 const FileStore = require("session-file-store")(session); // 세션을 파일에 저장
 const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(cors());
 app.use(
   session({
     key: "arirangs",
