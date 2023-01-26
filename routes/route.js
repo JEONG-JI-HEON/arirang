@@ -33,6 +33,7 @@ router.get("/movieS", function (req, res, next) {
       "X-Naver-Client-Secret": client_secret,
     },
   };
+
   request(options, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       if (req.session.is_logined == true) {
