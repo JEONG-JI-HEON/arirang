@@ -20,6 +20,8 @@ var swiper = new Swiper(".mySwiper", {
   //   el: ".swiper-pagination",
   //   clickable: true,
   // },
+  observer: true,
+  observeParents: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
